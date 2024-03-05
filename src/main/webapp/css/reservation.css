@@ -1,0 +1,39 @@
+#wrap {
+	width: 971px;
+	margin: 0 auto;
+}
+
+h1 {
+	color: blue;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+table td, th {
+	border: #d3d3d3 solid 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: skyblue;
+}
+
+img {
+	width: 220px;
+	height: 300px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: navy;
+}
