@@ -5,7 +5,7 @@ public class membershipDTO {
 	private String pw;
 	private String name;
 	private String phone;
-	private int res_id;
+	private Integer res_id;
 	
 	public String getEmail() {
 		return email;
@@ -31,10 +31,10 @@ public class membershipDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getRes_id() {
+	public Integer getRes_id() {
 		return res_id;
 	}
-	public void setRes_id(int res_id) {
+	public void setRes_id(Integer res_id) {
 		this.res_id = res_id;
 	}
 	@Override

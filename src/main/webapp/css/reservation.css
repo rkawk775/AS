@@ -15,7 +15,7 @@ table {
 }
 
 table td,th {
-	border: skyblue solid 1px;
+	border: #d3d3d3 solid 1px;
 	padding: 5px;
 	text-align: center;
 }
