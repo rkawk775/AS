@@ -16,7 +16,7 @@
 				<td colspan="7" style="border: white; text-align: right;">
 			</tr>
 			<tr>
-				<td>AS품목</td><td>날짜</td><td>시간</td><td>예약자이름</td><td>예약번호</td><td>전화번호</td><td>이메일</td>
+				<th>AS품목</th><th>날짜</th><th>시간</th><th>예약자이름</th><th>예약번호</th><th>전화번호</th><th>이메일</th>
 			</tr>
 			<c:forEach var="reservation" items="${reservationList }">
 				<tr class="record" align="center">
