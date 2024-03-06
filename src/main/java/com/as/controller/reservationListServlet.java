@@ -31,20 +31,22 @@ public class reservationListServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String searchText = request.getParameter("textSearch"); // 사용자가 입력한 검색어를 받아옴
-		
-		reservationDAO rdao = reservationDAO.getInstance();
-		List<reservationDTO> reservationList = rdao.selectAllReservations();
-		List<reservationDTO> reservationResultList = rdao.selectSearchResultReservations(searchText);
-		
-		request.setAttribute("reservationList", reservationList);
-		request.setAttribute("reservationResultList", reservationResultList); // 검색 결과를 request에 저장하여 JSP 파일로 전달
-		
-		RequestDispatcher rd = request.getRequestDispatcher("reservation/reservationList.jsp");
-		rd.forward(request, response);
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        reservationDAO rdao = reservationDAO.getInstance();
+        String searchText = request.getParameter("textSearch");
+        List<reservationDTO> reservationList = null;
 
+        if (searchText != null && !searchText.isEmpty()) {
+            reservationList = rdao.selectSearchResultReservations(searchText);
+            System.out.println(reservationList);
+        } else {
+            reservationList = rdao.selectAllReservations();
+        }
+
+        request.setAttribute("reservationList", reservationList);
+        RequestDispatcher rd = request.getRequestDispatcher("reservation/reservationList.jsp");
+        rd.forward(request, response);
+    }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

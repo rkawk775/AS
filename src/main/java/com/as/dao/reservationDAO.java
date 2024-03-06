@@ -27,7 +27,7 @@ public class reservationDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from reservation order by res_id desc";
+		String sql = "select * from reservation order by res_id";
 		
 		List<reservationDTO> list = new ArrayList<reservationDTO>();
 		
@@ -61,20 +61,16 @@ public class reservationDAO {
 	}
 	
 	// 예약 검색 결과 리스트 출력
-	public List<reservationDTO> selectSearchResultReservations(String searchText){
+	public List<reservationDTO> selectSearchResultReservations(String searchText) {
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;
 	    ResultSet rs = null;
-	    
-	    // 검색어를 이용한 동적 쿼리 작성
-	    String sql = "SELECT * FROM reservation WHERE asitem LIKE ? OR res_name LIKE ? ORDER BY res_id DESC";
-	    
 	    List<reservationDTO> list = new ArrayList<reservationDTO>();
 	    
 	    try {
 	        conn = DBManager.getConnection();
+	        String sql = "SELECT * FROM reservation WHERE asitem LIKE ? OR res_name LIKE ? ORDER BY res_id DESC";
 	        pstmt = conn.prepareStatement(sql);
-	        // 검색어를 바인딩하고 LIKE 연산자에 사용할 검색 패턴 설정
 	        pstmt.setString(1, "%" + searchText + "%"); // AS 품목에 대한 검색
 	        pstmt.setString(2, "%" + searchText + "%"); // 예약자 이름에 대한 검색
 	        rs = pstmt.executeQuery();
@@ -91,7 +87,7 @@ public class reservationDAO {
 	            
 	            list.add(rdto);
 	        }
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    } finally {
 	        try {
