@@ -72,7 +72,7 @@ public class reservationDAO {
 	        conn = DBManager.getConnection();
 	        String sql = "select * from reservation where res_id=? order by res_id desc";
 	        pstmt = conn.prepareStatement(sql);
-	        pstmt.setString(1, "%" + searchText + "%"); 
+	        pstmt.setString(1, searchText); 
 	        rs = pstmt.executeQuery();
 	        
 	        while(rs.next()) {

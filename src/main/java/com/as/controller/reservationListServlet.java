@@ -39,7 +39,6 @@ public class reservationListServlet extends HttpServlet {
 
         if (searchText != null) {
             reservationList = rdao.selectSearchResultReservations(searchText);
-            System.out.println(reservationList);
         } else {
             reservationList = rdao.selectAllReservations();
         }
