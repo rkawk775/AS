@@ -65,7 +65,7 @@ public class joinServlet extends HttpServlet {
 			request.setAttribute("massage", "회원가입에 실패하였습니다.");
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("login.do");
 		rd.forward(request, response);
 	}
 
