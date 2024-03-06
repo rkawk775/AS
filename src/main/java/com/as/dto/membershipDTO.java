@@ -6,6 +6,7 @@ public class membershipDTO {
 	private String name;
 	private String phone;
 	private Integer res_id;
+	private int admin;
 	
 	public String getEmail() {
 		return email;
@@ -37,11 +38,19 @@ public class membershipDTO {
 	public void setRes_id(Integer res_id) {
 		this.res_id = res_id;
 	}
+	public int getAdmin() {
+		return admin;
+	}
+	public void setAdmin(int admin) {
+		this.admin = admin;
+	}
 	@Override
 	public String toString() {
 		return "membershipDTO [email=" + email + ", pw=" + pw + ", name=" + name + ", phone=" + phone + ", res_id="
-				+ res_id + "]";
+				+ res_id + ", admin=" + admin + "]";
 	}
+	
+	
 	
 	
 }
