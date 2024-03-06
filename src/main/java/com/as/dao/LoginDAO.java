@@ -17,8 +17,9 @@ public class LoginDAO {
 		return instance;
 	}
 	
+	
 	//회원 정보 확인(DB) - 로그인
-	public int userCheck(String email, String pwd, int admin) {
+	public int userCheck(String email, String pw, int admin) {
 		int result = 1;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -34,7 +35,7 @@ public class LoginDAO {
 			
 			if(rs.next()) {
 				//비밀번호 일치
-				if(pwd.equals(rs.getString("pwd"))) {
+				if(pw.equals(rs.getString("pw"))) {
 					//회원 등급
 					if(admin == rs.getInt("admin")) {
 						result = 2;   //관리자 로그인 성공
@@ -59,4 +60,6 @@ public class LoginDAO {
 		}
 		return result;
 	}
+	
+	
 }
