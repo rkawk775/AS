@@ -60,6 +60,49 @@ public class reservationDAO {
 		return list;
 	}
 	
+	// 예약 검색 결과 리스트 출력
+	public List<reservationDTO> selectSearchResultReservations(String searchText){
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    
+	    // 검색어를 이용한 동적 쿼리 작성
+	    String sql = "SELECT * FROM reservation WHERE asitem LIKE ? OR res_name LIKE ? ORDER BY res_id DESC";
+	    
+	    List<reservationDTO> list = new ArrayList<reservationDTO>();
+	    
+	    try {
+	        conn = DBManager.getConnection();
+	        pstmt = conn.prepareStatement(sql);
+	        // 검색어를 바인딩하고 LIKE 연산자에 사용할 검색 패턴 설정
+	        pstmt.setString(1, "%" + searchText + "%"); // AS 품목에 대한 검색
+	        pstmt.setString(2, "%" + searchText + "%"); // 예약자 이름에 대한 검색
+	        rs = pstmt.executeQuery();
+	        
+	        while(rs.next()) {
+	            reservationDTO rdto = new reservationDTO();
+	            rdto.setAsitem(rs.getString("asitem"));
+	            rdto.setRes_date(rs.getDate("res_date"));
+	            rdto.setRes_time(rs.getString("res_time"));
+	            rdto.setRes_name(rs.getString("res_name"));
+	            rdto.setRes_id(rs.getInt("res_id"));
+	            rdto.setPhone(rs.getString("phone"));
+	            rdto.setEmail(rs.getString("email"));
+	            
+	            list.add(rdto);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            DBManager.close(conn, pstmt, rs);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return list;
+	}
+	
 	// 예약 등록
 	public void insertReservation(reservationDTO rdto) {
 		Connection conn = null;

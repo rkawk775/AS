@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 <%
 response.sendRedirect("join.do");
 %>
+=======
+<% response.sendRedirect("login.do"); %>
+>>>>>>> branch 'main' of https://github.com/rkawk775/AS.git
 </body>
 </html>
