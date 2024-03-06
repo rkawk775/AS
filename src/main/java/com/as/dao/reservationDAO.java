@@ -70,10 +70,9 @@ public class reservationDAO {
 	    
 	    try {
 	        conn = DBManager.getConnection();
-	        String sql = "SELECT * FROM reservation WHERE asitem LIKE ? OR res_name LIKE ? ORDER BY res_id DESC";
+	        String sql = "select * from reservation where res_id=? order by res_id desc";
 	        pstmt = conn.prepareStatement(sql);
-	        pstmt.setString(1, "%" + searchText + "%"); // AS 품목에 대한 검색
-	        pstmt.setString(2, "%" + searchText + "%"); // 예약자 이름에 대한 검색
+	        pstmt.setString(1, "%" + searchText + "%"); 
 	        rs = pstmt.executeQuery();
 	        
 	        while(rs.next()) {

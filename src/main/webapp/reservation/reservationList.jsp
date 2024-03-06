@@ -12,7 +12,7 @@
     <div id="wrap" align="center">
         <h1>예약 관리 리스트</h1>
         <form id="searchForm" action="reservationList.do" method="post">
-            <input type="text" name="textSearch" size="50">
+            예약번호를 입력하시오: <input type="text" name="textSearch" size="20">
             <input type="submit" value="검색">
 	        <table class="list">
 	            <tr>
