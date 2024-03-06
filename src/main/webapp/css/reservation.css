@@ -14,8 +14,8 @@ table {
 	line-height: 24px;
 }
 
-table td, th {
-	border: #d3d3d3 solid 1px;
+table td,th {
+	border: skyblue solid 1px;
 	padding: 5px;
 	text-align: center;
 }
