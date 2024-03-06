@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예약 관리 리스트</title>
+<title>예약 관리 페이지</title>
 <link rel="stylesheet" type="text/css" href="css/reservation.css">
 </head>
 <body>
