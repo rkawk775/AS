@@ -42,7 +42,7 @@ public class reservationDAO {
 				rdto.setRes_date(rs.getDate("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setRes_name(rs.getString("res_name"));
-				rdto.setRes_id(rs.getString("res_id"));
+				rdto.setRes_id(rs.getInt("res_id"));
 				rdto.setPhone(rs.getString("phone"));
 				rdto.setEmail(rs.getString("email"));
 				
@@ -105,7 +105,7 @@ public class reservationDAO {
 				rdto.setRes_date(rs.getDate("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setRes_name(rs.getString("res_name"));
-				rdto.setRes_id(rs.getString("res_id"));
+				rdto.setRes_id(rs.getInt("res_id"));
 				rdto.setPhone(rs.getString("phone"));
 				rdto.setEmail(rs.getString("email"));
 			}
@@ -134,7 +134,7 @@ public class reservationDAO {
 			pstmt.setString(4, rdto.getRes_name());
 			pstmt.setString(5, rdto.getPhone());
 			pstmt.setString(6, rdto.getEmail());
-			pstmt.setString(6, rdto.getRes_id());
+			pstmt.setInt(6, rdto.getRes_id());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

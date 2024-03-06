@@ -7,7 +7,7 @@ public class reservationDTO {
 	private Date res_date;
 	private String res_time;
 	private String res_name;
-	private String res_id;
+	private int res_id;
 	private String phone;
 	private String email;
 	
@@ -35,10 +35,10 @@ public class reservationDTO {
 	public void setRes_name(String res_name) {
 		this.res_name = res_name;
 	}
-	public String getRes_id() {
+	public int getRes_id() {
 		return res_id;
 	}
-	public void setRes_id(String res_id) {
+	public void setRes_id(int res_id) {
 		this.res_id = res_id;
 	}
 	public String getPhone() {
