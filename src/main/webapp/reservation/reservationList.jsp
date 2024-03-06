@@ -13,10 +13,10 @@
 		<h1>예약 관리 리스트</h1>
 		<table class="list">
 			<tr>
-				<td colspan="7" style="border: white; text-align: right;">
+				<td colspan="9" style="border: white; text-align: right;">
 			</tr>
 			<tr>
-				<th>AS품목</th><th>날짜</th><th>시간</th><th>예약자이름</th><th>예약번호</th><th>전화번호</th><th>이메일</th>
+				<th>AS품목</th><th>날짜</th><th>시간</th><th>예약자이름</th><th>예약번호</th><th>전화번호</th><th>이메일</th><th>예약 수정</th><th>예약 삭제</th>
 			</tr>
 			<c:forEach var="reservation" items="${reservationList }">
 				<tr class="record" align="center">

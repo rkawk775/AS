@@ -27,7 +27,7 @@ public class reservationDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from reservation order by desc";
+		String sql = "select * from reservation order by res_id desc";
 		
 		List<reservationDTO> list = new ArrayList<reservationDTO>();
 		
