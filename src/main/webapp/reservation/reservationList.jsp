@@ -11,6 +11,8 @@
 <body>
 	<div id="wrap" align="center">
 		<h1>예약 관리 리스트</h1>
+		<input type="text" name="textSearch" size="50">
+		<input type="button" value="검색" onclick="location.href=''">
 		<table class="list">
 			<tr>
 				<td colspan="9" style="border: white; text-align: right;">
