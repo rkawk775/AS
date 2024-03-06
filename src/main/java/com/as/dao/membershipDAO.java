@@ -59,7 +59,8 @@ import util.DBManager;
 		}
 		
 		// 예약 등록
-		public void insertMembership(membershipDTO mdto) {
+		public int insertMembership(membershipDTO mdto) {
+			int result = -1;
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			
@@ -79,6 +80,7 @@ import util.DBManager;
 			} finally {
 				DBManager.close(conn, pstmt);
 			}
+			return result;
 		}
 		
 		// 예약 리스트 수정
