@@ -1,4 +1,5 @@
 package com.as.dto;
+
 import java.sql.Date;
 
 public class reservationDTO {
@@ -9,6 +10,7 @@ public class reservationDTO {
 	private String res_id;
 	private String phone;
 	private String email;
+	
 	public String getAsitem() {
 		return asitem;
 	}
@@ -51,13 +53,10 @@ public class reservationDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	@Override
 	public String toString() {
 		return "reservationDTO [asitem=" + asitem + ", res_date=" + res_date + ", res_time=" + res_time + ", res_name="
 				+ res_name + ", res_id=" + res_id + ", phone=" + phone + ", email=" + email + "]";
 	}
-	
-	
-	
-	
 }
