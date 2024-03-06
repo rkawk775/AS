@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-aaaaaaaaaaa
-<h1>asdf</h1>
-<h2>dddd</h2>
+<%
+response.sendRedirect("join.do");
+%>
 </body>
 </html>
