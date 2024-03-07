@@ -8,6 +8,6 @@
 </head>
 <body>
 <% response.sendRedirect("login.do"); %>
-aaa
+
 </body>
 </html>
