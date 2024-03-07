@@ -41,9 +41,9 @@ public class loginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		/*
+		
 		String email = request.getParameter("email");
-		String pwd = request.getParameter("pwd");
+		String pwd = request.getParameter("pw");
 		int admin = Integer.parseInt(request.getParameter("admin"));
 		
 		String url = null;
@@ -52,8 +52,10 @@ public class loginServlet extends HttpServlet {
 		LoginDAO ldao = LoginDAO.getInstance();
 		int result = ldao.userCheck(email, pwd, admin);
 		
+		System.out.println(result);
+		
 		//아이디와 패스워드 일치 후 권한 체크
-		if(result == 2 || result == 3) {
+		if(result == 3) {   //일반 회원일 떄,일반 페이지로 넘어가게
 			membershipDTO mdto = new membershipDTO();
 			mdto = ldao.getMember(email);
 			
@@ -61,9 +63,18 @@ public class loginServlet extends HttpServlet {
 			session.setAttribute("email", mdto);
 			session.setAttribute("result", result);
 			
-			url = "application.do";
-		}else {
-			url = "login.jsp";
+			url = "mainpage/application.jsp";
+		}else if(result == 2) {  //관리자일 때, 관리자 페이지로 넘어가게
+			membershipDTO mdto = new membershipDTO();
+			mdto = ldao.getMember(email);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("email", mdto);
+			session.setAttribute("result", result);
+			
+			url = "reservation/reservationList.jsp";
+		}else { 
+			url = "login/login.jsp";
 			if(result == 1) {
 				request.setAttribute("message", "권한 선택이 잘못되었습니다.");
 			}else if(result == 0) {
@@ -72,8 +83,8 @@ public class loginServlet extends HttpServlet {
 				request.setAttribute("message", "존재하지 않는 아이디입니다.");
 			}
 		}
-		*/
-		RequestDispatcher rd = request.getRequestDispatcher("login/login.jsp");
+
+		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 		
 	}
