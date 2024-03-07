@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${member}</h1>
-<c:forEach var="mem" items="${member}">
-<a href="application.do?res_id=2">예약 신청</a>
+
+<c:forEach var="member" items="${member}">
+<a href="application.do?email=bbbbb@naver.com">예약 신청</a>
 </c:forEach>
+
 <br>
 <form action="change.do" method="post">
 <input type="submit" value="예약 변경">
@@ -22,7 +23,7 @@
  <table>
  	<th>연결 확인</th>
  	<tr>
- 		<td>${mamership.name }</td>
+ 		<td>${member}</td>
  	</tr>
  </table>
 </body>

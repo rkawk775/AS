@@ -32,9 +32,12 @@ public class mainpageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		
 		mainpageDAO adao = mainpageDAO.getInstance();
 		List<membershipDTO> member = adao.selectAll();
 		request.setAttribute("member", member);
+		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
 		rd.forward(request, response);

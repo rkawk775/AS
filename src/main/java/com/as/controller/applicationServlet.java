@@ -1,7 +1,11 @@
 package com.as.controller;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.util.List;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.as.dao.mainpageDAO;
 import com.as.dto.membershipDTO;
+import com.as.dto.reservationDTO;
+
 
 /**
  * Servlet implementation class applicationServlet
@@ -32,7 +38,7 @@ public class applicationServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String res_id = request.getParameter("res_id");
+		String res_id = request.getParameter("email");
 		
 		mainpageDAO adao = mainpageDAO.getInstance();
 		membershipDTO mdto = adao.selectMovieByCode(res_id);
@@ -54,7 +60,7 @@ public class applicationServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-		String asitem ="";
+		String asitem = "";
 		for(int i=0;i<str.length;i++) {
 			if(i == 0) {
 				asitem += str[i];
@@ -62,10 +68,9 @@ public class applicationServlet extends HttpServlet {
 				asitem = asitem+","+str[i];
 			}
 		}
-		
 		System.out.println("길이는 : "+str.length);
-		System.out.println("asitem : "+ str);
-		System.out.println("date : "+res_date);
+		System.out.println("asitem : "+ asitem);
+		//SimpleDateFormat formatter = new SimpleDateFormat("MM-dd");
 		System.out.println("time : "+res_time);
 		System.out.println("name : "+name);
 		System.out.println("phone : "+ phone);
@@ -73,12 +78,31 @@ public class applicationServlet extends HttpServlet {
 		
 		
 		
-		System.out.println("도착");
+		reservationDTO rdto = new reservationDTO();
 		
+		rdto.setAsitem(asitem);
+		System.out.println(rdto.getAsitem());
 		
+		/*try {
+			Date date = (Date) formatter.parse(res_date);
+			
+			java.sql.Date sqlDate = new java.sql.Date
+			System.out.println("date : "+date);
+			rdto.setRes_date(date);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		*/
+		rdto.setRes_time(res_time);
+		rdto.setName(name);
 		
+	
 		
-		RequestDispatcher rd = request.getRequestDispatcher("mainpage.jsp");
+		mainpageDAO mdao = mainpageDAO.getInstance();
+		mdao.insertas(rdto);
+		
+		//response.sendRedirect("mainpage/mainpage.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
 		rd.forward(request, response);
 		
 	}

@@ -1,3 +1,4 @@
+<%@page import="java.util.Calendar"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -13,31 +14,47 @@
 <link rel="stylesheet" type="text/css" href="css/application.css">
 </head>
 <body>
+
 <%
-	Date date = new Date();
-	SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
-	String strDate = simpleDate.format(date);
+    // 현재 날짜 가져오기
+    Date currentDate = new Date();
+
+    // SimpleDateFormat을 사용하여 날짜 포맷팅
+    SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
+    String strDate = simpleDate.format(currentDate);
 %>
 <h1>AS 신청하기</h1>
 <div class="back">
-<div id="bg">
-<form action="application.do" method="post" name="frm">
-<div class="asop">
-<h2>AS 품목</h2>
-	<p class="op2"><input type="checkbox" name="asitem" value="phone" />스마트 폰</p>
-	<p class="op2"><input type="checkbox" name="asitem" value="tab" />탭</p>
-	<p class="op2"><input type="checkbox" name="asitem" value="watch" />워치</p><br>
-	
-</div>
-<div id="bg">
-<h2>날짜 선택</h2>
-<div class="date">
-	<input type="radio" name="res_date" value="1"><%=strDate %>
-	<input type="radio" name="res_date" value="2">+2
-	<input type="radio" name="res_date" value="3">+3
-	<input type="radio" name="res_date" value="4">+4
-	<input type="radio" name="res_date" value="5">+5
-</div></div>
+    <div id="bg">
+        <form action="application.do" method="post" name="frm">
+            <div class="asop">
+                <h2>AS 품목</h2>
+                <p class="op2"><input type="checkbox" name="asitem" value="핸드폰" />스마트 폰</p>
+                <p class="op2"><input type="checkbox" name="asitem" value="탭" />탭</p>
+                <p class="op2"><input type="checkbox" name="asitem" value="워치" />워치</p><br>
+            </div>
+            <div id="bg">
+                <h2>날짜 선택</h2>
+                <div class="date">
+             <div class="hidden">
+                    <input type="radio" name="res_date" value="<%=strDate%>">
+               </div>   
+                    <%
+                        // 1부터 5까지 반복하면서 날짜 1일씩 증가시키기
+                        for (int i = 1; i <= 5; i++) {
+                            // 새로운 Calendar 객체를 사용하여 각 날짜 계산
+                            Calendar nextDateCalendar = Calendar.getInstance();
+                            nextDateCalendar.setTime(currentDate);
+                            nextDateCalendar.add(Calendar.DAY_OF_MONTH, i);
+
+                            Date nextDate = nextDateCalendar.getTime();
+                    %>
+                            <input type="radio" name="res_date" value="<%=simpleDate.format(nextDate)%>"><%=simpleDate.format(nextDate)%>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
 <div id="bg">
 <h2>시간 선택</h2>
 <div class="time">

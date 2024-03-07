@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 h1{
 	text-align: center;
 }
@@ -40,7 +41,10 @@ h1{
 
 }
 #bg .date input{
-	margin-left: 120px;
+	margin-left: 100px;
+}
+.hidden{
+	display: none;
 }
 #bg .time input{
 	margin-left: 100px; 
