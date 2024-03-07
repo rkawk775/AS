@@ -34,11 +34,14 @@
     </tr>
     <tr>
     	<td colspan="2" align="center">
-    		<input type="submit" class="button" value="가입" onclick="return joinCheck()">
+    		<input type="submit" value="가입" onclick="return joinCheck()">
     		&nbsp;&nbsp;&nbsp;&nbsp;
-        	<input type="reset" class="button" value="취소">
+        	<input type="reset" value="취소">
         <td>
     </tr>
+    <tr>
+		<td colspan="2">${message }</td>
+	</tr>
 </table>
 </form>
 </body>
