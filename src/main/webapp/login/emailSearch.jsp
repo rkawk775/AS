@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>이메일 검색</title>
 </head>
 <body>
-<% response.sendRedirect("login.do"); %>
+
 </body>
 </html>

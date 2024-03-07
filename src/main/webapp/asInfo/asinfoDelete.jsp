@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>예약삭제</title>
-<link rel="stylesheet" type="text/css" href="css/reservation.css">
+<link rel="stylesheet" type="text/css" href="css/asinfo.css">
 </head>
 <body>
 	<div id="delete" align="center">

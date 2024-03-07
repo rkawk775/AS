@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>예약 확인 페이지</title>
-<link rel="stylesheet" type="text/css" href="css/reservation.css">
+<link rel="stylesheet" type="text/css" href="css/asinfo.css">
 </head>
 <body>
 	<div id="wrap" align="center">

@@ -41,18 +41,17 @@ public class joinServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pwd");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		String res_id = request.getParameter("res_id");
 		
 		membershipDTO mdto = new membershipDTO();
 		mdto.setName(name);
 		mdto.setEmail(email);
 		mdto.setPw(pw);
 		mdto.setPhone(phone);
-		mdto.setRes_id(Integer.parseInt(res_id));
 		
 		membershipDAO mdao= membershipDAO.getInstance();
 		int result = mdao.insertMembership(mdto);
@@ -65,7 +64,8 @@ public class joinServlet extends HttpServlet {
 			request.setAttribute("massage", "회원가입에 실패하였습니다.");
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("login.do");
+	
+		RequestDispatcher rd = request.getRequestDispatcher("login/login.jsp");
 		rd.forward(request, response);
 	}
 
