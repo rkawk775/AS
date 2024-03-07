@@ -46,14 +46,12 @@ public class joinServlet extends HttpServlet {
 		String pw = request.getParameter("pwd");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		String res_id = request.getParameter("res_id");
 		
 		membershipDTO mdto = new membershipDTO();
 		mdto.setName(name);
 		mdto.setEmail(email);
 		mdto.setPw(pw);
 		mdto.setPhone(phone);
-		mdto.setRes_id(Integer.parseInt(res_id));
 		
 		membershipDAO mdao= membershipDAO.getInstance();
 		int result = mdao.insertMembership(mdto);

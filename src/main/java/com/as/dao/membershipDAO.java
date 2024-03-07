@@ -64,7 +64,7 @@ import util.DBManager;
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			
-			String sql = "insert into membership(email,pw,name,phone) values(?,?,?,?)";
+			String sql = "insert into membership(email,pw,name,phone) values(?,?,?,?);";
 			
 			try {
 				conn = DBManager.getConnection();
@@ -74,6 +74,7 @@ import util.DBManager;
 				pstmt.setString(2, mdto.getPw());
 				pstmt.setString(3, mdto.getName());
 				pstmt.setString(4, mdto.getPhone());
+				//pstmt.setInt(5,mdto.getAdmin());
 				pstmt.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();
