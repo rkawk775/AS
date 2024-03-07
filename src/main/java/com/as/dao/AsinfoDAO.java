@@ -25,46 +25,37 @@ public class AsinfoDAO {
 
 	}
 
-	public List<reservationDTO> selectUserAsinfo() {
+	public reservationDTO selectUserAsinfo() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		reservationDTO rdto =null;
 
-		String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name ORDER BY r.res_id DESC";
-
-		List<reservationDTO> aslist = new ArrayList<reservationDTO>();
+		String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name where r.res_id=4 ORDER BY r.res_id DESC";
 
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				reservationDTO rdto = new reservationDTO();
-				membershipDTO mdto = new membershipDTO();
+				rdto = new reservationDTO();
 				rdto.setAsitem(rs.getString("asitem"));
 				rdto.setRes_date(rs.getDate("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));
 				rdto.setRes_id(rs.getInt("res_id"));
-				mdto.setPhone(rs.getString("phone"));
-				mdto.setEmail(rs.getString("email"));
-				rdto.setMembership(mdto);
-
-				aslist.add(rdto);
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			/*
+			
 			try {
 				DBManager.close(conn, pstmt, rs);
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
-			*/
+			}		
 		}
-		return aslist;
+		return rdto;
 	}
 
 	public reservationDTO selectAsinfobyres_id(String res_id) {

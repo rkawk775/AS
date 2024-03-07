@@ -12,29 +12,30 @@
 	<div id="wrap" align="center">
 		<h1>예약 확인 리스트</h1>
 		<table class="list">
-		    <tr>
-		        <td colspan="6" style="border: white; text-align: right;"><a
-				href="asWrite.do">예약신청</a></td>
-			</tr>
 			<tr>
 				<th>AS품목</th>
-				<th>날짜</th>
-				<th>시간</th>
-				<th>이름</th>
-				<th>예약수정</th>
-				<th>예약삭제</th>
+				<td><input type="text" name="asitem" value="${asinfoList.asitem}"
+					    readonly></td>
 			</tr>
-			<c:forEach var="asinfoList" items="${asinfoList}">
-			    <input type="hidden" name="res_id" value="${asinfoList.res_id}">
-				<tr class="asinfoList" align="center">
-					<td>${asinfoList.asitem}</td>
-					<td>${asinfoList.res_date}</td>
-					<td>${asinfoList.res_time}</td>
-					<td>${asinfoList.name}</td>
-					<td><a href="asinfoUpdate.do?res_id=${asinfoList.res_id}">예약수정</a></td>
-					<td><a href="asinfoDelete.do?res_id=${asinfoList.res_id}">예약삭제</a></td>
-				</tr>
-			</c:forEach>
+			<tr>	
+				<th>날짜</th>
+				<td><input type="text" name="res_date" value="${asinfoList.res_date}"
+						readonly></td>
+			</tr>
+			<tr>	
+				<th>시간</th>
+				<td><input type="text" name="res_time"
+						value="${asinfoList.res_time}" readonly></td>
+			</tr>
+			<tr>	
+				<th>이름</th>
+				<td><input type="text" name="res_name"
+						value="${asinfoList.name}" readonly></td>
+			</tr>		
+			<tr class="asinfoList" align="center">			
+				<td><a href="asinfoUpdate.do?res_id=${asinfoList.res_id}">예약수정</a></td>
+				<td><a href="asinfoDelete.do?res_id=${asinfoList.res_id}">예약삭제</a></td>
+			</tr>
 		</table>
 	</div>
 </body>
