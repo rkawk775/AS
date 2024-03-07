@@ -111,8 +111,9 @@ public class AsinfoDAO {
 	
 	public void updateAsinfo(String res_id) {
 		
-		String sql = "delete from reservation where res_id=?";
+		String sql = "update from reservation where res_id=?";
 		Connection conn = null;
+		PreparedStatement pstmt = null;
 		
 		
 	}
