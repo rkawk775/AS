@@ -27,6 +27,12 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
+			<a href="search.do" data-value="1">이메일 찾기</a> &nbsp; &nbsp;
+			<a href="search.do" data-value="2">비밀번호 찾기</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
 			<input type="button" value="회원가입" onclick="location.href='join.do'"> &nbsp; &nbsp;
 			<input type="submit" value="로그인" onclick="return loginCheck()">
 		</td>
