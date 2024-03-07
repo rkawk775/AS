@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+h1{
+	text-align: center;
+}
+
+.back{
+	margin: 0 auto;
+	border: solid 1px black;
+	width : 1000px;
+}
+#bg{
+	width:1000px;
+	margin: 0 auto;
+	clear: both;
+	
+	
+}
+#bg h2{
+	margin: 0 auto;
+	background-color: #0072de;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.asop input{
+	background: black;
+	width: 100px;
+	height: 50px;
+}
+.asop p{
+	width: 200px;
+	float: left;
+	font-size: 20px;
+	margin-left: 70px; 
+}
+
+#bg .time,
+#bg .date{
+	height: 50px;
+
+}
+#bg .date input{
+	margin-left: 120px;
+}
+#bg .time input{
+	margin-left: 100px; 
+}
+
+h4 {
+	font-size: 20px;
+	padding-left: 80px;
+}
+#bg .pr input{
+	margin-left: 400px;
+}
+#bg .btn {
+	margin-left: 400px;
+	margin-top:10px;
+}
+.btn input{
+	width: 20px;
+	height: 20px;
+}
+.btn2{
+	float: right;
+	margin-top:10px;
+}
+.btn2 input{
+	width: 150px;
+	height: 30px;
+}
