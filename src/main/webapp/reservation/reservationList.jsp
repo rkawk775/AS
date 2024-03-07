@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="resHeader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +14,11 @@
 </script>
 </head>
 <body>
+<%@ include file="resHeader.jsp" %>
     <div id="wrap" align="center">
         <h1>예약 관리 리스트</h1>
         <form id="searchForm" action="reservationList.do" method="post" name="frm">
-            예약자 이름을 입력하시오: <input type="text" name="textSearch" size="20">
+            예약번호를 입력하시오: <input type="text" name="textSearch" size="20">
             <input type="submit" value="검색"><br>&nbsp;
 	        <table class="list">
 	            <tr>
@@ -33,12 +33,13 @@
 	                    <td>${reservation.res_id}</td>
 	                    <td>${reservation.membership.phone}</td>
 	                    <td>${reservation.membership.email}</td>
-	                    <td><a href="reservationUpdate.do?code=${reservation.name}">예약 수정</a></td>
-	                    <td><a href="#" onclick="return confirmDelete('${reservation.name}');">예약 삭제</a></td>
+	                    <td><a href="reservationUpdate.do?code=${reservation.res_id}">예약 수정</a></td>
+	                    <td><a href="#" onclick="return confirmDelete('${reservation.res_id}');">예약 삭제</a></td>
 	                </tr>
 	            </c:forEach>
 	        </table>
         </form>
     </div>
+<%@ include file="resFooter.jsp" %>
 </body>
 </html>

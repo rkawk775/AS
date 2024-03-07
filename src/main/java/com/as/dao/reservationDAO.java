@@ -29,7 +29,7 @@ public class reservationDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name ORDER BY r.res_id";
+		String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.res_id = m.res_id ORDER BY r.res_id";
 		
 		List<reservationDTO> list = new ArrayList<reservationDTO>();
 		
@@ -74,7 +74,7 @@ public class reservationDAO {
 	    
 	    try {
 	        conn = DBManager.getConnection();
-	        String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name WHERE r.name=? ORDER BY r.res_id DESC";
+	        String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.res_id = m.res_id WHERE r.res_id=? ORDER BY r.res_id DESC";
 	        pstmt = conn.prepareStatement(sql);
 	        pstmt.setString(1, searchText);
 	        rs = pstmt.executeQuery();
@@ -108,17 +108,17 @@ public class reservationDAO {
 	}
 	
 	// 예약 리스트 수정
-	public reservationDTO selectReservationByRes_id(String name) {
+	public reservationDTO selectReservationByRes_id(String res_id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		reservationDTO rdto = null;
-		String sql = "select * from reservation where name=?";
+		String sql = "select * from reservation where res_id=?";
 		
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, name);
+			pstmt.setString(1, res_id);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -162,8 +162,8 @@ public class reservationDAO {
 	}
 	
 	// 예약 delete
-	public void deleteReservation(String name) {
-		String sql = "delete from reservation where name=?";
+	public void deleteReservation(String res_id) {
+		String sql = "delete from reservation where res_id=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -171,7 +171,7 @@ public class reservationDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, name);
+			pstmt.setString(1, res_id);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
