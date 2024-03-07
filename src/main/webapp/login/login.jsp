@@ -8,7 +8,7 @@
 <script type="text/javascript" src="script/login.js"></script>
 </head>
 <body>
-<form method="post" name="loginfrm" action="application.do">
+<form method="post" name="loginfrm" action="login.do">
 <h1 align="center">로그인</h1>
 <table align="center">
 	<tr>
@@ -24,7 +24,15 @@
 			<input type="radio" name="admin" value="0">관리자 &nbsp; &nbsp;
 			<input type="radio" name="admin" value="1">일반회원
 		</td>
-		<td rowspan="3" align="center"><input type="submit" value="로그인"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="button" value="회원가입" onclick="location.href='join.do'"> &nbsp; &nbsp;
+			<input type="submit" value="로그인" onclick="return loginCheck()">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">${message}</td>
 	</tr>
 </table>
 </form>
