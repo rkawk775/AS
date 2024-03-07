@@ -1,7 +1,6 @@
 package com.as.dto;
 
 import java.sql.Date;
-import com.as.dto.membershipDTO;
 
 public class reservationDTO {
 	private String asitem;
