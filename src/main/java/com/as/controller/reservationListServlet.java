@@ -33,14 +33,15 @@ public class reservationListServlet extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-        reservationDAO rdao = reservationDAO.getInstance();
+    	reservationDAO rdao = reservationDAO.getInstance();
         String searchText = request.getParameter("textSearch");
+
         List<reservationDTO> reservationList = null;
 
-        if (searchText != null) {
-            reservationList = rdao.selectSearchResultReservations(searchText);
+        if (searchText != null && !searchText.isEmpty()) {
+            reservationList = rdao.selectSearchResultReservationsWithMembership(searchText);
         } else {
-            reservationList = rdao.selectAllReservations();
+            reservationList = rdao.selectAllReservationsWithMembership();
         }
 
         request.setAttribute("reservationList", reservationList);

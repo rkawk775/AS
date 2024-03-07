@@ -12,7 +12,7 @@
     <div id="wrap" align="center">
         <h1>예약 관리 리스트</h1>
         <form id="searchForm" action="reservationList.do" method="post">
-            예약번호를 입력하시오: <input type="text" name="textSearch" size="20">
+            예약자 이름을 입력하시오: <input type="text" name="textSearch" size="20">
             <input type="submit" value="검색">
 	        <table class="list">
 	            <tr>
@@ -23,12 +23,12 @@
 	                    <td>${reservation.asitem}</td>
 	                    <td>${reservation.res_date}</td>
 	                    <td>${reservation.res_time}</td>
-	                    <td>${reservation.res_name}</td>
+	                    <td>${reservation.name}</td>
 	                    <td>${reservation.res_id}</td>
-	                    <td>${reservation.phone}</td>
-	                    <td>${reservation.email}</td>
-	                    <td><a href="reservationUpdate.do?code=${reservation.res_id}">예약 수정</a></td>
-	                    <td><a href="reservationDelete.do?code=${reservation.res_id}">예약 삭제</a></td>
+	                    <td>${reservation.membership.phone}</td>
+	                    <td>${reservation.membership.email}</td>
+	                    <td><a href="reservationUpdate.do?code=${reservation.name}">예약 수정</a></td>
+	                    <td><a href="reservationDelete.do?code=${reservation.name}">예약 삭제</a></td>
 	                </tr>
 	            </c:forEach>
 	        </table>
