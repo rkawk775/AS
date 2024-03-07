@@ -41,9 +41,9 @@ public class joinServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pwd");
+		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String res_id = request.getParameter("res_id");
 		
