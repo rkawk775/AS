@@ -63,7 +63,7 @@ public class loginServlet extends HttpServlet {
 			session.setAttribute("email", mdto);
 			session.setAttribute("result", result);
 			
-			url = "mainpage/application.jsp";
+			url = "mainpage.do";
 		}else if(result == 2) {  //관리자일 때, 관리자 페이지로 넘어가게
 			membershipDTO mdto = new membershipDTO();
 			mdto = ldao.getMember(email);
@@ -72,7 +72,7 @@ public class loginServlet extends HttpServlet {
 			session.setAttribute("email", mdto);
 			session.setAttribute("result", result);
 			
-			url = "reservation/reservationList.jsp";
+			url = "reservationList.do";
 		}else { 
 			url = "login/login.jsp";
 			if(result == 1) {
