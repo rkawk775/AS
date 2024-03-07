@@ -42,7 +42,6 @@ import util.DBManager;
 					mdto.setPw(rs.getString("pw"));
 					mdto.setName(rs.getString("name"));
 					mdto.setPhone(rs.getString("phone"));
-					mdto.setRes_id(rs.getInt("res_id"));
 					
 					list.add(mdto);
 				}
@@ -89,7 +88,7 @@ import util.DBManager;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			membershipDTO mdto = null;
-			String sql = "select * from membership where res_id=?";
+			String sql = "select * from membership where email=?";
 			
 			try {
 				conn = DBManager.getConnection();
@@ -103,7 +102,6 @@ import util.DBManager;
 					mdto.setPw(rs.getString("pw"));
 					mdto.setName(rs.getString("name"));
 					mdto.setPhone(rs.getString("phone"));
-					mdto.setRes_id(rs.getInt("res_id"));
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -128,7 +126,6 @@ import util.DBManager;
 				pstmt.setString(2, mdto.getPw());
 				pstmt.setString(3, mdto.getName());
 				pstmt.setString(4, mdto.getPhone());
-				pstmt.setInt(5, mdto.getRes_id());
 				pstmt.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();

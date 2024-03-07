@@ -5,7 +5,6 @@ public class membershipDTO {
 	private String pw;
 	private String name;
 	private String phone;
-	private Integer res_id;
 	private int admin;
 	
 	public String getEmail() {
@@ -32,12 +31,6 @@ public class membershipDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public Integer getRes_id() {
-		return res_id;
-	}
-	public void setRes_id(Integer res_id) {
-		this.res_id = res_id;
-	}
 	public int getAdmin() {
 		return admin;
 	}
@@ -46,8 +39,7 @@ public class membershipDTO {
 	}
 	@Override
 	public String toString() {
-		return "membershipDTO [email=" + email + ", pw=" + pw + ", name=" + name + ", phone=" + phone + ", res_id="
-				+ res_id + ", admin=" + admin + "]";
+		return "membershipDTO [email=" + email + ", pw=" + pw + ", name=" + name + ", phone=" + phone + ", admin=" + admin + "]";
 	}
 	
 	

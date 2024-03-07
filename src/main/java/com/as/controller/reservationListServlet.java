@@ -46,9 +46,9 @@ public class reservationListServlet extends HttpServlet {
         }
         
         // 삭제 요청 처리
-        String deleteId = request.getParameter("res_id");
-        if (deleteId != null) {
-            rdao.deleteReservation(deleteId); // 삭제 처리 코드
+        String deleteEmail = request.getParameter("email");
+        if (deleteEmail != null) {
+            rdao.deleteReservation(deleteEmail); // email을 이용한 삭제 처리 코드
             reservationList = rdao.selectAllReservationsWithMembership();
         }
 
@@ -60,6 +60,7 @@ public class reservationListServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("1111ggggg");
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
