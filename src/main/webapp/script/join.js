@@ -3,7 +3,7 @@ function joinCheck() {
 	if (document.frm.email.value.length==0) {
 		alert("이메일을 입력해주세요.");
 		frm.eamil.focus();
-		return false;ㅌ
+		return false;ㅌㅌ
 	}
 	const email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 	
