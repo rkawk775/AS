@@ -8,5 +8,6 @@
 </head>
 <body>
 <% response.sendRedirect("login.do"); %>
+<h1>어어어</h1>
 </body>
 </html>
