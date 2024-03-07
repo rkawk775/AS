@@ -64,7 +64,7 @@ import util.DBManager;
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			
-			String sql = "insert into membership(email,pw,name,phone) values(?,?,?,?);";
+			String sql = "insert into membership(email,pw,name,phone) values(?,?,?,?)";
 			
 			try {
 				conn = DBManager.getConnection();
