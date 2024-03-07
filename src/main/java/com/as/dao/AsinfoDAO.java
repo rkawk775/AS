@@ -1,12 +1,9 @@
 package com.as.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.as.dto.membershipDTO;
 import com.as.dto.reservationDTO;
 
 import util.DBManager;
