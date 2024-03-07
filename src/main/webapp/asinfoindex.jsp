@@ -10,5 +10,5 @@
     <%
 	response.sendRedirect("asinfoList.do");
 	%>
-</body>
-</html>
+</body> 
+</html> 
