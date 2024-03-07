@@ -10,21 +10,6 @@ function loginCheck(){
 		frm.pw.focus();
 		return false;
 	}
-	/*
-	var admin_radio = document.getElementByName('admin');
-	var result = null;
-	
-	for(var i=0; i<admin_radio.length; i++){
-		if(admin_radio[i].checked == true){
-			result = admin_radio[i].value;
-		}
-	}
-	if(result == null){
-		alert("권한을 선택하세요");
-		return false;
-	}
-	*/
-	
 
     var admin_radio = document.querySelector('input[name="admin"]:checked');
     if (!admin_radio) {
