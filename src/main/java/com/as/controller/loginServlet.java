@@ -52,7 +52,6 @@ public class loginServlet extends HttpServlet {
 		LoginDAO ldao = LoginDAO.getInstance();
 		int result = ldao.userCheck(email, pwd, admin);
 		
-		System.out.println(result);
 		
 		//아이디와 패스워드 일치 후 권한 체크
 		if(result == 3) {   //일반 회원일 떄,일반 페이지로 넘어가게
