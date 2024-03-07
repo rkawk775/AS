@@ -18,7 +18,7 @@
         <h1>예약 관리 리스트</h1>
         <form id="searchForm" action="reservationList.do" method="post" name="frm">
             예약자 이름을 입력하시오: <input type="text" name="textSearch" size="20">
-            <input type="submit" value="검색">
+            <input type="submit" value="검색"><br>&nbsp;
 	        <table class="list">
 	            <tr>
 	                <th>AS품목</th><th>날짜</th><th>시간</th><th>예약자이름</th><th>예약번호</th><th>전화번호</th><th>이메일</th><th>예약 수정</th><th>예약 삭제</th>
