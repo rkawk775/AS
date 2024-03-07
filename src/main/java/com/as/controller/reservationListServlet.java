@@ -32,19 +32,30 @@ public class reservationListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
     	
-        reservationDAO rdao = reservationDAO.getInstance();
+    	reservationDAO rdao = reservationDAO.getInstance();
         String searchText = request.getParameter("textSearch");
+
         List<reservationDTO> reservationList = null;
 
         if (searchText != null) {
-            reservationList = rdao.selectSearchResultReservations(searchText);
-            System.out.println(reservationList);
+            reservationList = rdao.selectSearchResultReservationsWithMembership(searchText);
+            request.setAttribute("reservationList", reservationList);
         } else {
-            reservationList = rdao.selectAllReservations();
+            reservationList = rdao.selectAllReservationsWithMembership();
+            request.setAttribute("reservationList", reservationList);
+        }
+        
+        // 삭제 요청 처리
+        String deleteId = request.getParameter("name");
+        if (deleteId != null) {
+            rdao.deleteReservation(deleteId);
+            // 삭제 후에 리스트를 다시 불러와서 갱신
+            List<reservationDTO> updatedList = rdao.selectAllReservationsWithMembership();
+            request.setAttribute("reservationList", updatedList);
         }
 
-        request.setAttribute("reservationList", reservationList);
         RequestDispatcher rd = request.getRequestDispatcher("reservation/reservationList.jsp");
         rd.forward(request, response);
     }
