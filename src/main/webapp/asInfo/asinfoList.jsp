@@ -33,7 +33,6 @@
 					<td>${asinfoList.name}</td>
 					<td><a href="asinfoUpdate.do?res_id=${asinfoList.res_id}">예약수정</a></td>
 					<td><a href="asinfoDelete.do?res_id=${asinfoList.res_id}">예약삭제</a></td>
-					<td>${asinfoList.phone}</td>
 				</tr>
 			</c:forEach>
 		</table>

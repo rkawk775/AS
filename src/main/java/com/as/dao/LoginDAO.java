@@ -26,7 +26,7 @@ public class LoginDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from membershop where email=?";
+		String sql = "select * from membership where email=?";
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -41,7 +41,7 @@ public class LoginDAO {
 					//회원 등급
 					if(admin == rs.getInt("admin")) {
 						result = 2;   //관리자 로그인 성공
-						if(admin == 1) {
+						if(admin == 0) {
 							result = 3;  //일반 회원 로그인 성공
 						}
 					}
