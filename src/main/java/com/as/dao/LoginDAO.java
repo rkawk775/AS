@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.as.dto.membershipDTO;
+
 import util.DBManager;
 
 public class LoginDAO {
@@ -18,7 +20,7 @@ public class LoginDAO {
 	}
 	
 	
-	//회원 정보 확인(DB) - 로그인
+	//회원 정보(DB) - 로그인
 	public int userCheck(String email, String pw, int admin) {
 		int result = 1;
 		Connection conn = null;
@@ -59,6 +61,42 @@ public class LoginDAO {
 			}
 		}
 		return result;
+	}
+	
+	
+	
+	//이메일로 회원 정보 가져옴 (다시 수정) 
+	public membershipDTO getMember(String email) {
+		membershipDTO mdto = null;
+		String sql = "select * from membership where email=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				mdto = new membershipDTO();
+				mdto.setEmail(rs.getString("email"));
+				mdto.setPw(rs.getString("pw"));
+				mdto.setName(rs.getString("name"));
+				mdto.setPhone(rs.getString("phone"));
+				mdto.setRes_id(rs.getInt("res_id"));
+				mdto.setAdmin(rs.getInt("admin"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				DBManager.close(conn, pstmt, rs);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return mdto;
 	}
 	
 	

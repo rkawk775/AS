@@ -70,7 +70,7 @@ public class reservationDAO {
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;
 	    ResultSet rs = null;
-	    List<reservationDTO> list = new ArrayList<>();
+	    List<reservationDTO> list = new ArrayList<reservationDTO>();
 	    
 	    try {
 	        conn = DBManager.getConnection();
@@ -105,29 +105,6 @@ public class reservationDAO {
 	        }
 	    }
 	    return list;
-	}
-	
-	// 예약 등록
-	public void insertReservation(reservationDTO rdto) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		String sql = "insert into reservation(asitem,res_date,res_time,name) values(?,?,?,?)";
-		
-		try {
-			conn = DBManager.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, rdto.getAsitem());
-			pstmt.setDate(2, rdto.getRes_date());
-			pstmt.setString(3, rdto.getRes_time());
-			pstmt.setString(4, rdto.getName());
-			pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(conn, pstmt);
-		}
 	}
 	
 	// 예약 리스트 수정
