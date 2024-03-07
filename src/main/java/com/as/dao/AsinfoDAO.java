@@ -56,11 +56,13 @@ public class AsinfoDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			/*
 			try {
 				DBManager.close(conn, pstmt, rs);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			*/
 		}
 		return aslist;
 	}
