@@ -39,12 +39,10 @@ public class reservationListServlet extends HttpServlet {
 
         List<reservationDTO> reservationList = null;
 
-        if (searchText != null) {
+        if (searchText != null && !searchText.isEmpty()) {
             reservationList = rdao.selectSearchResultReservationsWithMembership(searchText);
-            request.setAttribute("reservationList", reservationList);
         } else {
             reservationList = rdao.selectAllReservationsWithMembership();
-            request.setAttribute("reservationList", reservationList);
         }
         
         // 삭제 요청 처리
@@ -53,9 +51,9 @@ public class reservationListServlet extends HttpServlet {
             rdao.deleteReservation(deleteId);
             // 삭제 후에 리스트를 다시 불러와서 갱신
             List<reservationDTO> updatedList = rdao.selectAllReservationsWithMembership();
-            request.setAttribute("reservationList", updatedList);
         }
 
+        request.setAttribute("reservationList", reservationList);
         RequestDispatcher rd = request.getRequestDispatcher("reservation/reservationList.jsp");
         rd.forward(request, response);
     }
