@@ -25,9 +25,11 @@ function loginCheck(){
 	}
 	*/
 	
-	var admin_radio = $('input[name=admin]').is(':checked');
-	if(!admin_radio){
-		alert("권한을 선택하세요");
-		return false;
-	}
+
+    var admin_radio = document.querySelector('input[name="admin"]:checked');
+    if (!admin_radio) {
+        alert("권한을 선택하세요");
+        return false;
+    }
+    return true;
 }
