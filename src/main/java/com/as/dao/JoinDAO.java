@@ -19,7 +19,7 @@ public class JoinDAO {
 	}
 	
 	public int insertJoin(membershipDTO mdto) {
-		int result = -1;
+		int result = 1;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -28,7 +28,6 @@ public class JoinDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			
 			pstmt.setString(1, mdto.getEmail());
 			pstmt.setString(2, mdto.getPw());
 			pstmt.setString(3, mdto.getName());
