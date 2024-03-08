@@ -34,7 +34,7 @@ public class mainpageDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			System.out.println(rs);
+			//System.out.println(rs);
 			while(rs.next()) {
 				System.out.println("이동");
 				membershipDTO mdto = new membershipDTO();
@@ -62,22 +62,22 @@ public class mainpageDAO {
 		ResultSet rs = null;
 		String sql = "select * from membership where email=?";
 		membershipDTO mdto = null;
-		System.out.println(email);
+		//System.out.println(email);
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
-			System.out.println(rs.toString());
+			//System.out.println(rs.toString());
 			if(rs.next()) {
-				System.out.println("값 들어옴");
+				//System.out.println("값 들어옴");
 				mdto = new membershipDTO();
 				mdto.setEmail(rs.getString("email"));
 				mdto.setName(rs.getString("name"));
 				mdto.setPhone(rs.getString("phone"));
 				mdto.setPw(rs.getString("pw"));
-				mdto.setRes_id(rs.getInt("res_id"));
-				System.out.println(mdto.getEmail());
+				//mdto.setRes_id(rs.getInt("res_id"));
+				//System.out.println(mdto.getEmail());
 			}
 			
 		} catch (Exception e) {
@@ -89,10 +89,11 @@ public class mainpageDAO {
 	}
 	
 	
-	public void insertas(reservationDTO rdto) {
+	public void insertas(reservationDTO rdto, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into reservation(asitem,res_date,res_time,name) values('?',to_date('03-12','mm-dd'),'?','?')";
+		String sql = "insert into reservation(asitem,res_date,res_time,name) values('?','?','?','?') where email=?";
+		
 		System.out.println("dao 연결 옴");
 		try {
 			System.out.println(rdto.getAsitem());
@@ -101,8 +102,10 @@ public class mainpageDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, rdto.getAsitem());
-			pstmt.setString(2, rdto.getRes_time());
-			pstmt.setString(3, rdto.getName());
+			pstmt.setString(2, rdto.getRes_date());
+			pstmt.setString(3, rdto.getRes_time());
+			pstmt.setString(4, rdto.getName());
+			pstmt.setString(5, email);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception

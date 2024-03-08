@@ -68,20 +68,31 @@ public class applicationServlet extends HttpServlet {
 				asitem = asitem+","+str[i];
 			}
 		}
+	
+	      /*SimpleDateFormat format = new SimpleDateFormat("MMdd");
+	      try {
+	         Date date = (Date) format.parse(res_date);
+	         rdto.setRes_date(date);
+	         System.out.println("=========================");
+	         System.out.println(rdto.getRes_date());
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	      }*/
+		
+		
 		System.out.println("길이는 : "+str.length);
 		System.out.println("asitem : "+ asitem);
 		//SimpleDateFormat formatter = new SimpleDateFormat("MM-dd");
+		System.out.println("res_date : "+ res_date);
 		System.out.println("time : "+res_time);
 		System.out.println("name : "+name);
 		System.out.println("phone : "+ phone);
 		System.out.println("email : "+ email);
 		
 		
-		
 		reservationDTO rdto = new reservationDTO();
-		
 		rdto.setAsitem(asitem);
-		System.out.println(rdto.getAsitem());
+		rdto.setRes_date(res_date);
 		
 		/*try {
 			Date date = (Date) formatter.parse(res_date);
@@ -99,7 +110,8 @@ public class applicationServlet extends HttpServlet {
 	
 		
 		mainpageDAO mdao = mainpageDAO.getInstance();
-		mdao.insertas(rdto);
+		
+		mdao.insertas(rdto,email);
 		
 		//response.sendRedirect("mainpage/mainpage.jsp");
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
