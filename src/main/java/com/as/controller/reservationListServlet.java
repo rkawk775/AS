@@ -46,11 +46,10 @@ public class reservationListServlet extends HttpServlet {
         }
         
         // 삭제 요청 처리
-        String deleteId = request.getParameter("name");
-        if (deleteId != null) {
-            rdao.deleteReservation(deleteId);
-            // 삭제 후에 리스트를 다시 불러와서 갱신
-            List<reservationDTO> updatedList = rdao.selectAllReservationsWithMembership();
+        String deleteEmail = request.getParameter("email");
+        if (deleteEmail != null) {
+            rdao.deleteReservation(deleteEmail); // email을 이용한 삭제 처리 코드
+            reservationList = rdao.selectAllReservationsWithMembership();
         }
 
         request.setAttribute("reservationList", reservationList);

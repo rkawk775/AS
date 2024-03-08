@@ -2,9 +2,6 @@ package com.as.controller;
 
 import java.io.IOException;
 
-
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,16 +13,16 @@ import com.as.dao.AsinfoDAO;
 import com.as.dto.reservationDTO;
 
 /**
- * Servlet implementation class asinfoListServlet
+ * Servlet implementation class AsinfoUpdateServlet
  */
-@WebServlet("/asinfoList.do")
-public class AsinfoListServlet extends HttpServlet {
+@WebServlet("/asinfoUpdate.do")
+public class AsinfoUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AsinfoListServlet() {
+    public AsinfoUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,14 +31,12 @@ public class AsinfoListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		AsinfoDAO adao = AsinfoDAO.getInstance();
-		reservationDTO asinfoList = adao.selectUserAsinfo();
-		request.setAttribute("asinfoList", asinfoList);
-
-		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoList.jsp");
+		String res_id = request.getParameter("res_id");
+		AsinfoDAO dao = AsinfoDAO.getInstance();
+		reservationDTO dto = dao.selectAsinfobyres_id(res_id);
+		request.setAttribute("asinfoUpdate", dto);
+		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoUpdate.jsp");
 		rd.forward(request, response);
-	
 	}
 
 	/**

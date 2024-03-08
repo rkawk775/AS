@@ -13,7 +13,7 @@
 <table align="center">
 	<tr>
 		<td>이메일</td>
-		<td><input type="text" name="email"></td>
+		<td><input type="text" name="email" value="${email}"></td>
 	</tr>
 	<tr>
 		<td>비밀번호</td>
@@ -21,8 +21,14 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="radio" name="admin" value="0">관리자 &nbsp; &nbsp;
-			<input type="radio" name="admin" value="1">일반회원
+			<input type="radio" name="admin" value="1">관리자 &nbsp; &nbsp;
+			<input type="radio" name="admin" value="0">일반회원
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<a href="search.do" data-value="1">이메일 찾기</a> &nbsp; &nbsp;
+			<a href="search.do" data-value="2">비밀번호 찾기</a>
 		</td>
 	</tr>
 	<tr>

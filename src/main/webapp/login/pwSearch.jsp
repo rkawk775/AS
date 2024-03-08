@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>비밀번호 검색</title>
 </head>
 <body>
-    <%
-	response.sendRedirect("asinfoList.do");
-	%>
-</body> 
-</html> 
+
+</body>
+</html>

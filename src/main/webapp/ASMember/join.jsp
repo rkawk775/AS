@@ -6,35 +6,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/join.css">
+<script type="text/javascript" src="script/join.js"></script>
 </head>
 <body>
-<h4>회원 가입</h4>
 <form method="post" name="frm" action="join.do">
-    <div class="group">
-	     <label for="email" class="label">Email Address</label>
-         <input id="email" type="email" class="input">
-    </div>
-    <div class="group">
-         <label for="pw" class="label">Password</label>
-         <input id="w" type="password" class="input" data-type="password">
-    </div>
-    <div class="group">
-         <label for="pw" class="label">Repeat Password</label>
-         <input id="pw" name="pw_check" type="password" class="input" data-type="password">
-    </div>
-    <div class="group">
-		 <label for="user" class="label">User Name</label>
-         <input id="user" type="name" class="input">
-    </div>
-    <div class="group">
-         <label for="phone" class="label">Phone</label>
-         <input id="phone" type="text" class="input">
-    </div>
-	<div class="group">
-         <input type="submit" class="button" value="Sign Up">
-         <input type="reset" class="button" value="cancel">
-    </div>
+<h1 align="center">회원 가입</h4>
+<table align="center">
+    <tr>
+    	<td>이메일</td>
+    	<td><input type="email" name="email"></td>
+    </tr>
+    <tr>
+    	<td>비밀번호</td>
+    	<td><input type="password" name="pw"><td>
+    </tr>
+    <tr>
+    	<td>비밀번호 확인</td>
+    	<td><input type="password" name="pw_check"><td>
+    </tr>
+    <tr>
+    	<td>이름</td>
+    	<td><input type="text" name="name"><td>
+    </tr>
+    <tr>
+    	<td>전화번호</td>
+    	<td><input type="text" name="phone"><td>
+    </tr>
+    <tr>
+    	<td colspan="2" align="center">
+    		<input type="submit" value="가입" onclick="return joinCheck()">
+    		&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input type="reset" value="취소">
+        <td>
+    </tr>
+    <tr>
+		<td colspan="2">${message }</td>
+	</tr>
+</table>
 </form>
 </body>
 </html>

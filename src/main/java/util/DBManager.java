@@ -13,7 +13,7 @@ public class DBManager {
 		Connection conn = null;
 		try {
 			Context init = new InitialContext();
-			Context envContext = (Context) init.lookup("java:comp/env");
+			Context envContext = (Context) init.lookup("java:/comp/env");
 			DataSource ds = (DataSource) envContext.lookup("jdbc/as");
 			conn = ds.getConnection();
 		} catch (Exception e) {

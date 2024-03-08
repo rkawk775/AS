@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <%
-	response.sendRedirect("asinfoList.do");
-	%>
-</body> 
-</html> 
+	<img src="images/footerImg_fix.png" class="centered-image" >
+</body>
+</html>

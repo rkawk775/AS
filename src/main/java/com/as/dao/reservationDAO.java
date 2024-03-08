@@ -29,7 +29,7 @@ public class reservationDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name ORDER BY r.res_id";
+		String sql = "SELECT r.*, m.phone FROM reservation r JOIN membership m ON r.email = m.email ORDER BY r.res_id";
 		
 		List<reservationDTO> list = new ArrayList<reservationDTO>();
 		
@@ -42,12 +42,12 @@ public class reservationDAO {
 				reservationDTO rdto = new reservationDTO();
 				membershipDTO mdto = new membershipDTO();
 				rdto.setAsitem(rs.getString("asitem"));
-	            rdto.setRes_date(rs.getDate("res_date"));
+				rdto.setEmail(rs.getString("email"));
+	            rdto.setRes_date(rs.getString("res_date"));
 	            rdto.setRes_time(rs.getString("res_time"));
 	            rdto.setName(rs.getString("name"));
 	            rdto.setRes_id(rs.getInt("res_id"));
 	            mdto.setPhone(rs.getString("phone")); // membership 테이블의 phone 컬럼
-	            mdto.setEmail(rs.getString("email")); // membership 테이블의 email 컬럼
 	            
 	            rdto.setMembership(mdto);
 				
@@ -74,7 +74,7 @@ public class reservationDAO {
 	    
 	    try {
 	        conn = DBManager.getConnection();
-	        String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name WHERE r.name=? ORDER BY r.res_id DESC";
+	        String sql = "SELECT r.*, m.phone FROM reservation r JOIN membership m ON r.email = m.email WHERE r.res_id=? ORDER BY r.res_id DESC";
 	        pstmt = conn.prepareStatement(sql);
 	        pstmt.setString(1, searchText);
 	        rs = pstmt.executeQuery();
@@ -84,12 +84,12 @@ public class reservationDAO {
 	            membershipDTO mdto = new membershipDTO();
 	            
 	            rdto.setAsitem(rs.getString("asitem"));
-	            rdto.setRes_date(rs.getDate("res_date"));
+				rdto.setEmail(rs.getString("email"));
+	            rdto.setRes_date(rs.getString("res_date"));
 	            rdto.setRes_time(rs.getString("res_time"));
 	            rdto.setName(rs.getString("name"));
 	            rdto.setRes_id(rs.getInt("res_id"));
 	            mdto.setPhone(rs.getString("phone")); // membership 테이블의 phone 컬럼
-	            mdto.setEmail(rs.getString("email")); // membership 테이블의 email 컬럼
 	            
 	            rdto.setMembership(mdto);
 	            
@@ -108,23 +108,24 @@ public class reservationDAO {
 	}
 	
 	// 예약 리스트 수정
-	public reservationDTO selectReservationByRes_id(String name) {
+	public reservationDTO selectReservationByRes_id(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		reservationDTO rdto = null;
-		String sql = "select * from reservation where name=?";
+		String sql = "select * from reservation where email=?";
 		
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, name);
+			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				rdto = new reservationDTO();
 				rdto.setAsitem(rs.getString("asitem"));
-				rdto.setRes_date(rs.getDate("res_date"));
+				rdto.setEmail(rs.getString("email"));
+				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));
 				rdto.setRes_id(rs.getInt("res_id"));
@@ -149,7 +150,7 @@ public class reservationDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, rdto.getAsitem());
-			pstmt.setDate(2, rdto.getRes_date());
+			pstmt.setString(2, rdto.getRes_date());
 			pstmt.setString(3, rdto.getRes_time());
 			pstmt.setString(4, rdto.getName());
 			pstmt.setInt(6, rdto.getRes_id());
@@ -162,21 +163,20 @@ public class reservationDAO {
 	}
 	
 	// 예약 delete
-	public void deleteReservation(String name) {
-		String sql = "delete from reservation where name=?";
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		try {
-			conn = DBManager.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, name);
-			pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(conn, pstmt);
-		}
+	public void deleteReservation(String email) {
+	    String sql = "delete from reservation where email=?";
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    
+	    try {
+	        conn = DBManager.getConnection();
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, email);
+	        pstmt.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        DBManager.close(conn, pstmt);
+	    }
 	}
 }
