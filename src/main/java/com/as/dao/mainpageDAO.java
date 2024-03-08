@@ -31,7 +31,6 @@ public class mainpageDAO {
 		List<membershipDTO> list = new ArrayList<membershipDTO>();
 		
 		try {
-			System.out.println("연결 완료");
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -90,22 +89,22 @@ public class mainpageDAO {
 	}
 	
 	
-	public void insertas(reservationDTO rdto, String email) {
+	public void insertas(reservationDTO rdto) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into reservation(asitem,email,res_date,res_time,name) values(?,?,?,?,?)";
 		
-		System.out.println("dao 연결 옴");
-		System.out.println(email);
+		//System.out.println("dao 연결 옴");
+		//System.out.println(email);
 		try {
-			System.out.println(rdto.getAsitem());
-			System.out.println(rdto.getRes_date());
-			System.out.println(rdto.getRes_time());
-			System.out.println(rdto.getName());
+			//System.out.println(rdto.getAsitem());
+			//System.out.println(rdto.getRes_date());
+			//System.out.println(rdto.getRes_time());
+			//System.out.println(rdto.getName());
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, rdto.getAsitem());
-			pstmt.setString(2, email);
+			pstmt.setString(2, rdto.getEmail());
 			pstmt.setString(3, rdto.getRes_date());
 			pstmt.setString(4, rdto.getRes_time());
 			pstmt.setString(5, rdto.getName());
@@ -126,6 +125,7 @@ public class mainpageDAO {
 		ResultSet rs = null;
 		String sql = "select * from reservation where email=?";
 		reservationDTO rdto = null;
+		membershipDTO membership = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -134,16 +134,53 @@ public class mainpageDAO {
 			while(rs.next()) {
 				rdto = new reservationDTO();
 				rdto.setAsitem(rs.getString("asitem"));
+				rdto.setEmail(rs.getString("email"));
 				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));
-				System.out.println(rdto.getName());
+				rdto.setRes_id(rs.getInt("res_id"));
+				 
+				membership = new membershipDTO();
+		        membership.setEmail(rs.getString("asitem"));
+		        membership.setName(rs.getNString("name"));
+				
+				rdto.setMembership(membership);
+				System.out.println("연결 완료");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			DBManager.close(conn, pstmt, rs);
 		}return rdto;
+		
+	}
+	
+	
+	public void updateas(reservationDTO rdto) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql ="update reservation set asitem = ?, res_date = ?, res_time = ? where email= ?";
+		try {
+			
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rdto.getAsitem());
+			pstmt.setString(2, rdto.getRes_date());
+			pstmt.setString(3, rdto.getRes_time());
+			pstmt.setString(4, rdto.getEmail());
+			
+			System.out.println(rdto.getAsitem());
+			System.out.println(rdto.getRes_date());
+			System.out.println(rdto.getRes_time());
+			System.out.println(rdto.getEmail());
+			pstmt.executeUpdate();
+			System.out.println("연결");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
 		
 	}
 	

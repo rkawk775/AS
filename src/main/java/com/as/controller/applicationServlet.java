@@ -40,8 +40,8 @@ public class applicationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String res_id = request.getParameter("email");
 		
-		mainpageDAO adao = mainpageDAO.getInstance();
-		membershipDTO mdto = adao.selectByCode(res_id);
+		mainpageDAO mdao = mainpageDAO.getInstance();
+		membershipDTO mdto = mdao.selectByCode(res_id);
 		request.setAttribute("mdto", mdto);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage/application.jsp");
@@ -75,34 +75,23 @@ public class applicationServlet extends HttpServlet {
 		//System.out.println("name : "+name);
 		//System.out.println("phone : "+ phone);
 		//System.out.println("email : "+ email);
-		
-		
 		reservationDTO rdto = new reservationDTO();
 		rdto.setAsitem(asitem);
 		rdto.setRes_date(res_date);
-		
-		/*try {
-			Date date = (Date) formatter.parse(res_date);
-			
-			java.sql.Date sqlDate = new java.sql.Date
-			System.out.println("date : "+date);
-			rdto.setRes_date(date);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		*/
 		rdto.setRes_time(res_time);
 		rdto.setName(name);
+		rdto.setEmail(email);
 		
+
 	
 		
 		mainpageDAO mdao = mainpageDAO.getInstance();
 		
-		mdao.insertas(rdto,email);
+		mdao.insertas(rdto);
 		
-		//response.sendRedirect("mainpage/mainpage.jsp");
-		RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
-		rd.forward(request, response);
+		response.sendRedirect("mainpage.do");
+		//RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
+		//rd.forward(request, response);
 		
 	}
 

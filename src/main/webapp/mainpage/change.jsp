@@ -22,9 +22,8 @@
     // SimpleDateFormat을 사용하여 날짜 포맷팅
     SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
     String strDate = simpleDate.format(currentDate);
-%><c:forEach var="rdto" items="${rdto}">
-<h1>${rdto}</h1>
-</c:forEach>
+%>
+<h1>예약 변경</h1>
 <div class="back">
     <div id="bg">
         <form action="change.do" method="post" name="frm">
@@ -71,11 +70,11 @@
 <h2>개인정보 입력</h2>
 <div class="pr">
 <h4>이름</h4>
-	<input type="text" name="name" value="${rdto.name}" size="20"><br>
+	<input type="text" name="name" value="${rdto.name}" size="20" readonly><br>
 <h4>전화번호</h4>
-	<input type="text" name="phone" value="" size="20"><br>
+	<input type="text" name="phone" value="${rdto.phone}" size="20" readonly><br>
 <h4>이메일</h4>
-	<input type="text" name="email" value="" size="20" readonly><br>
+	<input type="text" name="email" value="${rdto.email}" size="20" readonly><br>
 </div>
 <div class ="btn">	
 	<input type="radio" name="check"value="a" checked>본인

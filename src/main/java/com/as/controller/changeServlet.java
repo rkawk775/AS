@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.as.dao.mainpageDAO;
+import com.as.dto.membershipDTO;
 import com.as.dto.reservationDTO;
 
 /**
@@ -34,9 +35,9 @@ public class changeServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		
 		mainpageDAO mdao = mainpageDAO.getInstance();
-		reservationDTO rdto = mdao.selectChangeByCode(email);
-		request.setAttribute("rtdo", rdto);
-		
+		//reservationDTO rdto = mdao.selectChangeByCode(email);
+		membershipDTO mdto = mdao.selectByCode(email);
+		request.setAttribute("rdto", mdto);
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage/change.jsp");
 		rd.forward(request, response);
 		
@@ -46,8 +47,42 @@ public class changeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		System.out.println("연결");
+		String[] str = request.getParameterValues("asitem");
+		String res_date = request.getParameter("res_date");
+		String res_time = request.getParameter("res_time");
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		String asitem = "";
+		for(int i=0;i<str.length;i++) {
+			if(i == 0) {
+				asitem += str[i];
+			}else {
+				asitem = asitem+","+str[i];
+			}
+		}
+		//System.out.println("길이는 : "+str.length);
+		//System.out.println("asitem : "+ asitem);
+		//System.out.println("res_date : "+ res_date);
+		//System.out.println("time : "+res_time);
+		//System.out.println("name : "+name);
+		//System.out.println("phone : "+ phone);
+		//System.out.println("email : "+ email);
+		mainpageDAO mdao = mainpageDAO.getInstance();
+		reservationDTO rdto = new reservationDTO();
+		rdto.setAsitem(asitem);
+		rdto.setRes_date(res_date);
+		rdto.setRes_time(res_time);
+		rdto.setName(name);
+		rdto.setEmail(email);
+		
+		mdao.updateas(rdto);
+		System.out.println("123");
+		response.sendRedirect("mainpage.do");
+		
+		
 	}
 
 }
