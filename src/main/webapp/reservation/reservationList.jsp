@@ -40,6 +40,6 @@
 	        </table>
         </form>
     </div>
-<%@ include file="resFooter.jsp" %>
 </body>
 </html>
+<%@ include file="resFooter.jsp" %>
