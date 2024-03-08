@@ -29,7 +29,7 @@
         <form action="application.do" method="post" name="frm">
             <div class="asop">
                 <h2>AS 품목</h2>
-                <p class="op2"><input type="checkbox" name="asitem" value="핸드폰" />스마트 폰</p>
+                <p class="op2"><input type="checkbox" name="asitem" value="휴대폰" />스마트 폰</p>
                 <p class="op2"><input type="checkbox" name="asitem" value="탭" />탭</p>
                 <p class="op2"><input type="checkbox" name="asitem" value="워치" />워치</p><br>
             </div>
@@ -74,7 +74,7 @@
 <h4>전화번호</h4>
 	<input type="text" name="phone" value="${mdto.phone}" size="20"><br>
 <h4>이메일</h4>
-	<input type="text" name="email" value="${mdto.email}" size="20"><br>
+	<input type="text" name="email" value="${mdto.email}" size="20" readonly><br>
 </div>
 <div class ="btn">	
 	<input type="radio" name="check"value="a" checked>본인

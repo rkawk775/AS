@@ -92,7 +92,7 @@ public class mainpageDAO {
 	public void insertas(reservationDTO rdto, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into reservation(asitem,email,res_date,res_time,name) values('?','?','?','?','?')";
+		String sql = "insert into reservation(asitem,email,res_date,res_time,name) values(?,?,?,?,?)";
 		
 		System.out.println("dao 연결 옴");
 		System.out.println(email);
