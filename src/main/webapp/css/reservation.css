@@ -2,12 +2,11 @@
     width: 970px;
     height: 1000px;
     margin: 0 auto;
-    /*background-color: white;*/
 }
 
 /* 기존 스타일들 */
 body {
-	background-color: #d3d3d3;
+    background-color: white;
 }
 
 img {
