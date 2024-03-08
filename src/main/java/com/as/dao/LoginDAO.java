@@ -63,6 +63,8 @@ public class LoginDAO {
 		return result;
 	}
 	
+	/**/
+	
 	
 	
 	//이메일로 회원 정보 가져옴 (다시 수정) 
@@ -84,7 +86,6 @@ public class LoginDAO {
 				mdto.setPw(rs.getString("pw"));
 				mdto.setName(rs.getString("name"));
 				mdto.setPhone(rs.getString("phone"));
-				mdto.setRes_id(rs.getInt("res_id"));
 				mdto.setAdmin(rs.getInt("admin"));
 			}
 		}catch(Exception e) {
@@ -98,6 +99,8 @@ public class LoginDAO {
 		}
 		return mdto;
 	}
+	
+	
 	
 	
 }
