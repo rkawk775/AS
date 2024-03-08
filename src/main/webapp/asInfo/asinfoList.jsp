@@ -42,7 +42,9 @@
 			<tr class="asinfoList" align="center">		
 				<td><input type="button"
 				value="예약수정" onclick="location.href='asinfoUpdate.do?res_id=${asinfoList.res_id}'"></td>
-				<td><a href="asinfoDelete.do?res_id=${asinfoList.res_id}">예약삭제</a></td>
+				<td>    </td>
+				<td><input type="button"
+				value="예약삭제" onclick="location.href='asinfoDelete.do?res_id=${asinfoList.res_id}'"></td>
 			</tr>
 		</table>
 	</div>
