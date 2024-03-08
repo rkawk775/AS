@@ -32,6 +32,7 @@
 				<h1>
 					SAMSUNG<br>삼성전자서비스센터
 				</h1>
+				<a href="">로그아웃</a>
 			</div>
 		</div>
 	</header>
