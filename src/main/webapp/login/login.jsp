@@ -27,8 +27,8 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<a href="search.do" data-value="1">이메일 찾기</a> &nbsp; &nbsp;
-			<a href="search.do" data-value="2">비밀번호 찾기</a>
+			<a href="login/emailSearch.jsp" data-value="1">이메일 찾기</a> &nbsp; &nbsp;
+			<a href="login/pwSearch.jsp" data-value="2">비밀번호 찾기</a>
 		</td>
 	</tr>
 	<tr>
