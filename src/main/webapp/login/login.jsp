@@ -25,12 +25,7 @@
 			<input type="radio" name="admin" value="0">일반회원
 		</td>
 	</tr>
-	<tr>
-		<td colspan="2" align="center">
-			<a href="login/emailSearch.jsp" data-value="1">이메일 찾기</a> &nbsp; &nbsp;
-			<a href="login/pwSearch.jsp" data-value="2">비밀번호 찾기</a>
-		</td>
-	</tr>
+
 	<tr>
 		<td colspan="2" align="center">
 			<input type="button" value="회원가입" onclick="location.href='join.do'"> &nbsp; &nbsp;
