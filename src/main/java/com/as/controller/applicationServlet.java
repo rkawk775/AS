@@ -41,7 +41,7 @@ public class applicationServlet extends HttpServlet {
 		String res_id = request.getParameter("email");
 		
 		mainpageDAO adao = mainpageDAO.getInstance();
-		membershipDTO mdto = adao.selectMovieByCode(res_id);
+		membershipDTO mdto = adao.selectByCode(res_id);
 		request.setAttribute("mdto", mdto);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("mainpage/application.jsp");
@@ -68,13 +68,13 @@ public class applicationServlet extends HttpServlet {
 				asitem = asitem+","+str[i];
 			}
 		}
-		System.out.println("길이는 : "+str.length);
-		System.out.println("asitem : "+ asitem);
-		System.out.println("res_date : "+ res_date);
-		System.out.println("time : "+res_time);
-		System.out.println("name : "+name);
-		System.out.println("phone : "+ phone);
-		System.out.println("email : "+ email);
+		//System.out.println("길이는 : "+str.length);
+		//System.out.println("asitem : "+ asitem);
+		//System.out.println("res_date : "+ res_date);
+		//System.out.println("time : "+res_time);
+		//System.out.println("name : "+name);
+		//System.out.println("phone : "+ phone);
+		//System.out.println("email : "+ email);
 		
 		
 		reservationDTO rdto = new reservationDTO();

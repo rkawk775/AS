@@ -26,7 +26,8 @@ public class mainpageDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql= "select * from membership order by email desc";
+		String sql= "select *  from membership where email='bbbbb@naver.com'";
+		/*String sql= "select * from membership order by email desc";*/
 		List<membershipDTO> list = new ArrayList<membershipDTO>();
 		
 		try {
@@ -56,7 +57,7 @@ public class mainpageDAO {
 		
 	}
 	
-	public membershipDTO selectMovieByCode(String email) {
+	public membershipDTO selectByCode(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -116,6 +117,33 @@ public class mainpageDAO {
 		}finally {
 			DBManager.close(conn, pstmt);
 		}
+		
+	}
+	
+	public reservationDTO selectChangeByCode(String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from reservation where email=?";
+		reservationDTO rdto = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				rdto = new reservationDTO();
+				rdto.setAsitem(rs.getString("asitem"));
+				rdto.setRes_date(rs.getString("res_date"));
+				rdto.setRes_time(rs.getString("res_time"));
+				rdto.setName(rs.getString("name"));
+				System.out.println(rdto.getName());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}return rdto;
 		
 	}
 	
