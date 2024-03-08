@@ -5,14 +5,35 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	body {
-	background-color: white;
-	width: 100%;
-    max-height: 57px;
-}
+	.one-header {
+	    display: block;
+	    background-color: #fff;
+	    max-height: 90px;
+	    flex: none;
+	    min-height: 56px;
+	}
+	
+	.header-inner {
+	    max-width: 1165px;
+	    margin: 0 auto;
+	    box-sizing: border-box;
+	}
+	
+	.logo {
+	    background-color: #ffffff;
+	    margin: 33px 0 33px 0;
+	}
 </style>
 </head>
-<body class="header">
-    <img src="images/headerImg_fix.png" class="centered-image">
+<body>
+	<header class="one-header">
+		<div class="header-inner">
+			<div class="logo">
+				<h1>
+					<img src="images/headerImg_fix.png">
+				</h1>
+			</div>
+		</div>
+	</header>
 </body>
 </html>
