@@ -43,8 +43,21 @@ public class AsinfoUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		
+		String res_date = request.getParameter("res_date");
+		String res_time = request.getParameter("res_time");
+		int res_id = Integer.parseInt(request.getParameter("res_id"));
+		
+		reservationDTO dto = new reservationDTO();
+		dto.setRes_date(res_date);
+		dto.setRes_time(res_time);
+		dto.setRes_id(res_id);
+		
+		AsinfoDAO dao = AsinfoDAO.getInstance();
+		dao.updateAsinfo(dto);
+		
+		response.sendRedirect("asinfoList.do");	
 	}
 
 }

@@ -43,7 +43,7 @@ public class reservationDAO {
 				membershipDTO mdto = new membershipDTO();
 				rdto.setAsitem(rs.getString("asitem"));
 				rdto.setEmail(rs.getString("email"));
-	            rdto.setRes_date(rs.getDate("res_date"));
+	            rdto.setRes_date(rs.getString("res_date"));
 	            rdto.setRes_time(rs.getString("res_time"));
 	            rdto.setName(rs.getString("name"));
 	            rdto.setRes_id(rs.getInt("res_id"));
@@ -85,7 +85,7 @@ public class reservationDAO {
 	            
 	            rdto.setAsitem(rs.getString("asitem"));
 				rdto.setEmail(rs.getString("email"));
-	            rdto.setRes_date(rs.getDate("res_date"));
+	            rdto.setRes_date(rs.getString("res_date"));
 	            rdto.setRes_time(rs.getString("res_time"));
 	            rdto.setName(rs.getString("name"));
 	            rdto.setRes_id(rs.getInt("res_id"));
@@ -125,7 +125,7 @@ public class reservationDAO {
 				rdto = new reservationDTO();
 				rdto.setAsitem(rs.getString("asitem"));
 				rdto.setEmail(rs.getString("email"));
-				rdto.setRes_date(rs.getDate("res_date"));
+				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));
 				rdto.setRes_id(rs.getInt("res_id"));
@@ -150,7 +150,7 @@ public class reservationDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, rdto.getAsitem());
-			pstmt.setDate(2, rdto.getRes_date());
+			pstmt.setString(2, rdto.getRes_date());
 			pstmt.setString(3, rdto.getRes_time());
 			pstmt.setString(4, rdto.getName());
 			pstmt.setInt(6, rdto.getRes_id());
@@ -164,7 +164,6 @@ public class reservationDAO {
 	
 	// 예약 delete
 	public void deleteReservation(String email) {
-		System.out.println(email);
 	    String sql = "delete from reservation where email=?";
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;

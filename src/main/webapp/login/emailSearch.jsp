@@ -7,6 +7,8 @@
 <title>이메일 검색</title>
 </head>
 <body>
+<form action="search.do" method="post">
 
+</form>
 </body>
 </html>

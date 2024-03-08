@@ -5,7 +5,7 @@ import java.sql.Date;
 public class reservationDTO {
 	private String asitem;
 	private String email;
-	private Date res_date;
+	private String res_date;
 	private String res_time;
 	private String name;
 	private Integer res_id;
@@ -23,10 +23,10 @@ public class reservationDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getRes_date() {
+	public String getRes_date() {
 		return res_date;
 	}
-	public void setRes_date(Date res_date) {
+	public void setRes_date(String res_date) {
 		this.res_date = res_date;
 	}
 	public String getRes_time() {
