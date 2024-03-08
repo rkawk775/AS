@@ -7,7 +7,7 @@
 <style>
 	.one-footer {
 	    display: block;
-	    background-color: #fff;
+	    background-color: #000;
 	    max-height: 90px;
 	    flex: none;
 	    min-height: 56px;
@@ -20,7 +20,7 @@
 	}
 	
 	.logo {
-	    background-color: #ffffff;
+	    background-color: #000000;
 	    margin: 0;
 	}
 </style>

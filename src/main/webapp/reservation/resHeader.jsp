@@ -7,7 +7,7 @@
 <style>
 	.one-header {
 	    display: block;
-	    background-color: #fff;
+	    background-color: #000;
 	    max-height: 90px;
 	    flex: none;
 	    min-height: 65px;
@@ -20,7 +20,7 @@
 	}
 	
 	.logo {
-	    background-color: #ffffff;
+	    background-color: #000000;
 	    margin: 0;
 	}
 </style>
@@ -30,7 +30,7 @@
 		<div class="header-inner">
 			<div class="logo">
 				<h1>
-					<img src="images/headerImg_fix.png">
+					SAMSUNG<br>삼성전자서비스센터
 				</h1>
 			</div>
 		</div>
