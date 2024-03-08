@@ -21,7 +21,7 @@
 	
 	.logo {
 	    background-color: #ffffff;
-	    margin: 33px 0 33px 0;
+	    margin: 0;
 	}
 </style>
 </head>

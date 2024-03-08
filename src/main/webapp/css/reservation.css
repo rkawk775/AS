@@ -8,6 +8,7 @@
 /* 기존 스타일들 */
 body {
 	background-color: #d3d3d3;
+	margin: 0;
 }
 
 img {
@@ -20,6 +21,7 @@ img {
 
 h1 {
     color: blue;
+	margin: 0;
 }
 
 table {

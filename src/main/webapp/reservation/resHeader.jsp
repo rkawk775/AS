@@ -10,7 +10,7 @@
 	    background-color: #fff;
 	    max-height: 90px;
 	    flex: none;
-	    min-height: 56px;
+	    min-height: 65px;
 	}
 	
 	.header-inner {
@@ -21,7 +21,7 @@
 	
 	.logo {
 	    background-color: #ffffff;
-	    margin: 33px 0 33px 0;
+	    margin: 0;
 	}
 </style>
 </head>
