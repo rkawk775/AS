@@ -31,6 +31,11 @@
 					<th>이름</th>
 					<td><input type="text" name="res_name"
 						value="${asinfoDelete.name}" readonly></td>
+				</tr>
+				<tr>
+					<th>예약번호</th>
+					<td><input type="text" name="res_id"
+						value="${asinfoDelete.res_id}" readonly></td>
 				</tr>			
 			</table>
 			<br>

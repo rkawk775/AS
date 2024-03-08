@@ -5,14 +5,35 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	body {
-	background-color: white;
-	width: 100%;
-    max-height: 57px;
-}
+	.one-footer {
+	    display: block;
+	    background-color: #000;
+	    max-height: 90px;
+	    flex: none;
+	    min-height: 56px;
+	}
+	
+	.footer-inner {
+	    max-width: 1165px;
+	    margin: 0 auto;
+	    box-sizing: border-box;
+	}
+	
+	.logo {
+	    background-color: #000000;
+	    margin: 0;
+	}
 </style>
 </head>
-<body class="footer">
-    <img src="images/footerImg_fix.png" class="centered-image">
+<body>
+	<footer class="one-footer">
+		<div class="footer-inner">
+			<div class="logo">
+				<h1>
+					<img src="images/footerImg fix.png">
+				</h1>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

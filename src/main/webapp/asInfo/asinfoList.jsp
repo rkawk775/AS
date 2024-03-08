@@ -29,11 +29,22 @@
 			<tr>	
 				<th>이름</th>
 				<td><input type="text" name="res_name"
-						value="${asinfoList.name}" readonly></td>
+						value="${asinfoList.name}" readonly></td>			
 			</tr>		
-			<tr class="asinfoList" align="center">			
-				<td><a href="asinfoUpdate.do?res_id=${asinfoList.res_id}">예약수정</a></td>
-				<td><a href="asinfoDelete.do?res_id=${asinfoList.res_id}">예약삭제</a></td>
+			<tr>	
+				<th>예약번호</th>
+				<td><input type="text" name="res_id"
+						value="${asinfoList.res_id}" readonly></td>						
+			</tr>
+		</table>
+		<br>
+		<table>			
+			<tr class="asinfoList" align="center">		
+				<td><input type="button"
+				value="예약수정" onclick="location.href='asinfoUpdate.do?res_id=${asinfoList.res_id}'"></td>
+				<td>    </td>
+				<td><input type="button"
+				value="예약삭제" onclick="location.href='asinfoDelete.do?res_id=${asinfoList.res_id}'"></td>
 			</tr>
 		</table>
 	</div>
