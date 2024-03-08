@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +7,12 @@
 <style>
 	body {
 	background-color: white;
+	width: 100%;
+    max-height: 57px;
 }
 </style>
 </head>
-<body>
-	<img src="images/headerImg_fix.png" class="centered-image">
+<body class="header">
+    <img src="images/headerImg_fix.png" class="centered-image">
 </body>
 </html>
