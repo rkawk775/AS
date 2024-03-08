@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="resHeader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,6 @@
 </script>
 </head>
 <body>
-<%@ include file="resHeader.jsp" %>
     <div id="wrap" align="center">
         <h1>예약 관리 리스트</h1>
         <form id="searchForm" action="reservationList.do" method="post" name="frm">
@@ -40,6 +40,6 @@
 	        </table>
         </form>
     </div>
-<%@ include file="resFooter.jsp" %>
 </body>
 </html>
+<%@ include file="resFooter.jsp" %>
