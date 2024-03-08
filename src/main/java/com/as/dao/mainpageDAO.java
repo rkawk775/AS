@@ -36,14 +36,14 @@ public class mainpageDAO {
 			rs = pstmt.executeQuery();
 			//System.out.println(rs);
 			while(rs.next()) {
-				System.out.println("이동");
+				//System.out.println("이동");
 				membershipDTO mdto = new membershipDTO();
 				mdto.setEmail(rs.getString("email"));
 				mdto.setPw(rs.getString("pw"));
 				mdto.setName(rs.getString("name"));
 				mdto.setPhone(rs.getString("phone"));
 				list.add(mdto);
-				System.out.println(mdto.getName());
+				//System.out.println(mdto.getName());
 			}
 			
 		}catch (Exception e) {
@@ -92,20 +92,23 @@ public class mainpageDAO {
 	public void insertas(reservationDTO rdto, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into reservation(asitem,res_date,res_time,name) values('?','?','?','?') where email=?";
+		String sql = "insert into reservation(asitem,email,res_date,res_time,name) values('?','?','?','?','?')";
 		
 		System.out.println("dao 연결 옴");
+		System.out.println(email);
 		try {
 			System.out.println(rdto.getAsitem());
+			System.out.println(rdto.getRes_date());
 			System.out.println(rdto.getRes_time());
 			System.out.println(rdto.getName());
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, rdto.getAsitem());
-			pstmt.setString(2, rdto.getRes_date());
-			pstmt.setString(3, rdto.getRes_time());
-			pstmt.setString(4, rdto.getName());
-			pstmt.setString(5, email);
+			pstmt.setString(2, email);
+			pstmt.setString(3, rdto.getRes_date());
+			pstmt.setString(4, rdto.getRes_time());
+			pstmt.setString(5, rdto.getName());
+			
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception
