@@ -28,7 +28,7 @@ public class AsinfoDAO {
 		ResultSet rs = null;
 		reservationDTO rdto =null;
 
-		String sql = "SELECT r.*, m.phone, m.email FROM reservation r JOIN membership m ON r.name = m.name where r.res_id=4 ORDER BY r.res_id DESC";
+		String sql = "SELECT r.*, m.phone FROM reservation r JOIN membership m ON r.email = m.email WHERE r.email='bbbbb@naver.com'";
 
 		try {
 			conn = DBManager.getConnection();
@@ -39,6 +39,7 @@ public class AsinfoDAO {
 				rdto.setAsitem(rs.getString("asitem"));
 				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
+				rdto.setEmail(rs.getString("email"));
 				rdto.setName(rs.getString("name"));
 				rdto.setRes_id(rs.getInt("res_id"));
 			}
@@ -61,7 +62,7 @@ public class AsinfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		reservationDTO rdto = null;
-		String sql = "select * from reservation where res_id=?";
+		String sql = "SELECT r.*, m.phone FROM reservation r JOIN membership m ON r.email = m.email WHERE res_id=?";
 
 		try {
 
@@ -73,11 +74,11 @@ public class AsinfoDAO {
 
 			if (rs.next()) {
 				rdto = new reservationDTO();
-				rdto.setRes_id(rs.getInt("res_id"));
 				rdto.setAsitem(rs.getString("asitem"));
 				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
-				rdto.setName(rs.getString("name"));			
+				rdto.setName(rs.getString("name"));
+				rdto.setRes_id(rs.getInt("res_id"));			
 			}
 
 		} catch (Exception e) {
@@ -91,7 +92,7 @@ public class AsinfoDAO {
 
 	public void deleteAsinfo(String res_id) {
 
-		String sql = "delete from reservation where res_id=?";
+		String sql = "DELETE FROM reservation where res_id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -111,7 +112,7 @@ public class AsinfoDAO {
 	
 	public void updateAsinfo(reservationDTO dto) {
 		
-		String sql = "update reservation set res_date=?, res_time=? where res_id=?";
+		String sql = "UPDATE reservation SET res_date=?, res_time=? where res_id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		

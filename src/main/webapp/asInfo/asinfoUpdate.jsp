@@ -31,10 +31,14 @@
 					<th>이름</th>
 					<td><input type="text" name="res_name"
 						value="${asinfoUpdate.name}" readonly></td>
-				</tr>			
+				</tr>	
+				<tr>
+					<th>예약번호</th>
+					<td><input type="text" name="res_id"
+						value="${asinfoUpdate.res_id}" readonly></td>
+				</tr>		
 			</table>
 			<br>
-			<br> <input type="hidden" name="res_id" value="${asinfoDelete.res_id}">
 			<input type="submit" value="변경"> <input type="button"
 				value="목록" onclick="location.href='asinfoList.do'">
 		</form>
