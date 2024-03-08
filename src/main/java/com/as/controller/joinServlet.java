@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.as.dao.JoinDAO;
 import com.as.dao.membershipDAO;
 import com.as.dto.membershipDTO;
 
@@ -53,8 +54,8 @@ public class joinServlet extends HttpServlet {
 		mdto.setPw(pw);
 		mdto.setPhone(phone);
 		
-		membershipDAO mdao= membershipDAO.getInstance();
-		int result = mdao.insertMembership(mdto);
+		JoinDAO jdao= JoinDAO.getInstance();
+		int result = jdao.insertJoin(mdto);
 		
 		HttpSession session = request.getSession();
 		if(result == 1) {
