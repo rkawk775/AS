@@ -2,11 +2,13 @@
     width: 970px;
     height: 1000px;
     margin: 0 auto;
+    background-color: white;
 }
 
 /* 기존 스타일들 */
 body {
-    background-color: white;
+	background-color: #d3d3d3;
+	margin: 0;
 }
 
 img {
@@ -19,6 +21,7 @@ img {
 
 h1 {
     color: blue;
+	margin: 0;
 }
 
 table {

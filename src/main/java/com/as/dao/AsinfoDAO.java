@@ -37,7 +37,7 @@ public class AsinfoDAO {
 			while (rs.next()) {
 				rdto = new reservationDTO();
 				rdto.setAsitem(rs.getString("asitem"));
-				rdto.setRes_date(rs.getDate("res_date"));
+				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));
 				rdto.setRes_id(rs.getInt("res_id"));
@@ -75,7 +75,7 @@ public class AsinfoDAO {
 				rdto = new reservationDTO();
 				rdto.setRes_id(rs.getInt("res_id"));
 				rdto.setAsitem(rs.getString("asitem"));
-				rdto.setRes_date(rs.getDate("res_date"));
+				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));			
 			}
@@ -118,7 +118,7 @@ public class AsinfoDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setDate(1, dto.getRes_date());
+			pstmt.setString(1, dto.getRes_date());
 			pstmt.setString(2, dto.getRes_time());
 			
 			pstmt.setInt(3, dto.getRes_id());
@@ -128,8 +128,6 @@ public class AsinfoDAO {
 			e.printStackTrace();
 		}finally {
 			DBManager.close(conn, pstmt);
-		}
-		
-		
+		}	
 	}
 }
