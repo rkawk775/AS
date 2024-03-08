@@ -8,7 +8,7 @@
 	.one-header {
 	    display: block;
 	    background-color: #000;
-	    max-height: 90px;
+	    max-height: 115px;
 	    flex: none;
 	    min-height: 65px;
 	}
@@ -32,8 +32,10 @@
 				<h1>
 					SAMSUNG<br>삼성전자서비스센터
 				</h1>
-				<a href="">로그아웃</a>
 			</div>
+		</div>
+		<div class="logout" align="right">
+			<a href="">로그아웃</a>
 		</div>
 	</header>
 </body>
