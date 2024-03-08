@@ -5,8 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	body {
+	background-color: white;
+}
+</style>
 </head>
 <body>
-	<img src="images/headerImg_fix.png" align="middle">
+	<img src="images/headerImg_fix.png" class="centered-image">
 </body>
 </html>
