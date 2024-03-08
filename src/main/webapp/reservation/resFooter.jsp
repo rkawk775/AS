@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img src="images/footerImg_fix.png" align="middle">
+	<img src="images/footerImg_fix.png" class="centered-image" >
 </body>
 </html>
