@@ -30,7 +30,7 @@
     </tr>
     <tr>
     	<td>전화번호</td>
-    	<td><input type="text" name="phone"><td>
+    	<td><input type="text" name="phone" placeholder="010-xxxx-xxxx"><td>
     </tr>
     <tr>
     	<td colspan="2" align="center">
