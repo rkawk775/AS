@@ -6,13 +6,13 @@ body {
 
 #wrap {
     width: 450px;
-    height: 273px;
+    height: 252px;
     margin: 0 auto;
     background-color: rgb(192, 192, 192);
 }
 #delete {
     width: 450px;
-    height: 315px;
+    height: 314px;
     margin: 0 auto;
     background-color: rgb(192, 192, 192);
 }
@@ -57,4 +57,13 @@ a {
 a:hover {
     text-decoration: underline;
     color: rgb(192, 192, 192);
+}
+#button{
+	border: none;
+	background-color: white;
+	margin: 0 auto;
+}
+#button:hover{
+	background-color: #77BBDD;
+	margin: 0 auto;
 }
