@@ -40,7 +40,7 @@
 						value="${asinfoList.res_id}" readonly></td>						
 			</tr>
 		</table>
-		<table>			
+		<table id="cldelete">			
 			<tr class="asinfoList" align="center">
 				<td><input type="button" id="button"
 				value="예약삭제" onclick="location.href='asinfoDelete.do?res_id=${asinfoList.res_id}'"></td>
