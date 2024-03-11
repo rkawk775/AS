@@ -34,9 +34,8 @@ public class AsinfoListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		AsinfoDAO adao = AsinfoDAO.getInstance();
-		reservationDTO asinfoList = adao.selectUserAsinfo();
+		reservationDTO asinfoList = adao.selectUserAsinfo("email");
 		request.setAttribute("asinfoList", asinfoList);
 
 		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoList.jsp");

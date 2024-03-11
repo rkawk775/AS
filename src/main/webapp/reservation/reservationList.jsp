@@ -33,7 +33,7 @@
 	                    <td>${reservation.name}</td>
 	                    <td>${reservation.res_id}</td>
 	                    <td>${reservation.membership.phone}</td>
-	                    <td><a href="reservationUpdate.do?email=${reservation.email}">예약 수정</a></td>
+	                    <td><a href="managerasinfoList.do?res_id=${reservation.res_id}">예약 수정</a></td>
 	                    <td><a href="reservationList.do?email=${reservation.email}" onclick="return confirmDelete('${reservation.email}');">예약 삭제</a></td>
 	                </tr>
 	            </c:forEach>

@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
 body {
-	background-color: rgb(217, 250, 255);
+	background-color: white;
+}
+
+#wrap {
+    width: 450px;
+    height: 600px;
+    background-color: grey;
+    text-align: center;
 }
