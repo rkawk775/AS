@@ -9,6 +9,7 @@ public class reservationDTO {
 	private String res_time;
 	private String name;
 	private Integer res_id;
+	private String phone;
 	private membershipDTO membership; // 추가된 회원 정보
 	
 	public String getAsitem() {
@@ -47,17 +48,23 @@ public class reservationDTO {
 	public void setRes_id(Integer res_id) {
 		this.res_id = res_id;
 	}
+    public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public membershipDTO getMembership() {
         return membership;
     }
-
-    public void setMembership(membershipDTO membership) {
+	public void setMembership(membershipDTO membership) {
         this.membership = membership;
     }
 	
-    @Override
-    public String toString() {
-        return "ReservationDTO [asitem=" + asitem + "email=" + email + ", res_date=" + res_date + ", res_time=" + res_time + ", name="
-                + name + ", res_id=" + res_id + ", membership=" + membership + "]";
-    }
+	@Override
+	public String toString() {
+		return "reservationDTO [asitem=" + asitem + ", email=" + email + ", res_date=" + res_date + ", res_time="
+				+ res_time + ", name=" + name + ", res_id=" + res_id + ", phone=" + phone + ", membership=" + membership
+				+ "]";
+	}
 }

@@ -5,35 +5,42 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	.one-footer {
+	.one-header {
 	    display: block;
-	    background-color: #1f2029;
+	    background-color: wh;
 	    max-height: 115px;
 	    flex: none;
 	    min-height: 65px;
 	}
 	
-	.footer-inner {
+	.header-inner {
 	    max-width: 1165px;
 	    margin: 0 auto;
 	    box-sizing: border-box;
 	}
+
 	
 	.logo {
-	    background-color: #1f2029;
 	    margin: 0;
+	}
+	.logout{
+		margin-right: 15%;
 	}
 </style>
 </head>
 <body>
-	<footer class="one-footer">
-		<div class="footer-inner">
+	<header class="one-header">
+		<div class="header-inner">
 			<div class="logo">
 				<h1>
-					<img src="images/footerImg fix.png">
+					SAMSUNG<br>삼성전자서비스센터
 				</h1>
 			</div>
 		</div>
-	</footer>
+		<div class="logout" align="right">
+			<a href="login.do">로그아웃</a>
+		</div>
+	</header>
 </body>
 </html>
+

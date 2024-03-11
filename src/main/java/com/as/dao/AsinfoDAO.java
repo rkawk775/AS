@@ -22,7 +22,7 @@ public class AsinfoDAO {
 
 	}
 
-	public reservationDTO selectUserAsinfo() {
+	public reservationDTO selectUserAsinfo(/*String email*/) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -33,6 +33,8 @@ public class AsinfoDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
+			
+			//pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				rdto = new reservationDTO();
@@ -108,27 +110,5 @@ public class AsinfoDAO {
 			DBManager.close(conn, pstmt);
 		}
 
-	}
-	
-	public void updateAsinfo(reservationDTO dto) {
-		
-		String sql = "UPDATE reservation SET res_date=?, res_time=? where res_id=?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		try {
-			conn = DBManager.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dto.getRes_date());
-			pstmt.setString(2, dto.getRes_time());
-			
-			pstmt.setInt(3, dto.getRes_id());
-			pstmt.executeUpdate();			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBManager.close(conn, pstmt);
-		}	
 	}
 }

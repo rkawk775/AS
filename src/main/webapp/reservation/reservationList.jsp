@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="wrap" align="center">
-        <h1>예약 관리 리스트</h1>
+        <h1>예약 관리 리스트</h1><br>
         <form id="searchForm" action="reservationList.do" method="post" name="frm">
             예약번호를 입력하시오: <input type="text" name="textSearch" size="20">
             <input type="submit" value="검색"><br>&nbsp;
@@ -33,7 +33,7 @@
 	                    <td>${reservation.name}</td>
 	                    <td>${reservation.res_id}</td>
 	                    <td>${reservation.membership.phone}</td>
-	                    <td><a href="reservationUpdate.do?email=${reservation.email}">예약 수정</a></td>
+	                    <td><a href="managerasinfoUpdate.do?res_id=${reservation.res_id}">예약 수정</a></td>
 	                    <td><a href="reservationList.do?email=${reservation.email}" onclick="return confirmDelete('${reservation.email}');">예약 삭제</a></td>
 	                </tr>
 	            </c:forEach>

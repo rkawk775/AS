@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.as.dao.AsinfoDAO;
 import com.as.dao.reservationDAO;
 import com.as.dto.reservationDTO;
 

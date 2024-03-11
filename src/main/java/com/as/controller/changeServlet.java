@@ -79,7 +79,6 @@ public class changeServlet extends HttpServlet {
 		rdto.setEmail(email);
 		
 		mdao.updateas(rdto);
-		System.out.println("123");
 		response.sendRedirect("mainpage.do");
 		
 		

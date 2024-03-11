@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="asinfoHeader.jsp" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,12 @@
 <title>예약확인 페이지</title>
 <link rel="stylesheet" type="text/css" href="css/asinfo.css">
 </head>
+<br>
+<br>
 <body>
 	<div id="wrap" align="center">
-		<h1>예약 확인 리스트</h1>
+		<h1 id="check">예약 확인 리스트</h1>
+		<br>
 		<table class="list">
 			<tr>
 				<th>AS품목</th>
@@ -37,13 +41,9 @@
 						value="${asinfoList.res_id}" readonly></td>						
 			</tr>
 		</table>
-		<br>
-		<table>			
-			<tr class="asinfoList" align="center">		
-				<td><input type="button"
-				value="예약수정" onclick="location.href='asinfoUpdate.do?res_id=${asinfoList.res_id}'"></td>
-				<td>    </td>
-				<td><input type="button"
+		<table id="cldelete">			
+			<tr class="asinfoList" align="center">
+				<td><input type="button" id="button"
 				value="예약삭제" onclick="location.href='asinfoDelete.do?res_id=${asinfoList.res_id}'"></td>
 			</tr>
 		</table>
