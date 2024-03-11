@@ -42,9 +42,12 @@
 				</tr>			
 			</table>
 			<h3>삭제하면 복구할수 없습니다. 신중히 선택해주세요.</h3>
-			<br> <input type="hidden" name="res_id" value="${asinfoDelete.res_id}">
-			<input type="submit" value="삭제"> <input type="button"
-				value="목록" onclick="location.href='asinfoList.do'">
+			<table>
+			    <tr>
+			        <td><input type="submit" value="삭제">
+			            <input type="button" value="목록" onclick="location.href='asinfoList.do'"></td>
+			    </tr>
+			</table>
 		</form>
 	</div>
 </body>
