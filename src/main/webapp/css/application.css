@@ -5,66 +5,99 @@ h1{
 	text-align: center;
 }
 
-
-#bg{
+#back{
 	width: 70vw;
-	height: 80vh;
-	margin: 0 auto;
-	background-color: gray;
-}
-#bg h2{
-	margin: 0 auto;
+	margin-left: 15vw;
 	
+}
+
+.op{
+	display:inline-block;
+	width: 70vw;
+	height: 8vh;
+}
+.con{
+	display: inline-block;
+	
+}
+.pr2{
+
+}
+
+h2{
+	display: inline-block;
+	width: 20%;
+	text-align:center;
+	align-items: center;
+}
+p{
+	display: inline-block;
 	text-align: center;
-	margin-bottom: 20px;
-}
-.asop input{
-	background: black;
-	width: 100px;
-	height: 50px;
-}
-.asop p{
-	width: 200px;
-	float: left;
-	font-size: 20px;
-	margin-left: 70px; 
-}
-
-#bg .time,
-#bg .date{
-	height: 50px;
-
-}
-#bg .date input{
-	margin-left: 100px;
 }
 .hidden{
 	display: none;
 }
-#bg .time input{
-	margin-left: 100px; 
-}
 
 h4 {
-	font-size: 20px;
-	padding-left: 80px;
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
-#bg .pr input{
-	margin-left: 400px;
+.prflex {
+	display: flex;	
 }
-#bg .btn {
-	margin-left: 400px;
-	margin-top:10px;
+.prbg {
+	height: 270px;
 }
-.btn input{
-	width: 20px;
-	height: 20px;
+.prbg h2 { 
+	align-self: center;
+}
+.con {
+	margin-left: 15%;
+}
+.btn{
+	display: inline-block;
+	margin-left: 40%;
 }
 .btn2{
-	float: right;
-	margin-top:10px;
+	display: flex;
+	flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
 }
 .btn2 input{
-	width: 150px;
+	width: 100px;
 	height: 30px;
 }
+.asitem{
+
+}
+.asitem p input{
+	width: 30px;
+	height: 30px;
+}
+.op2{
+	margin-right: 10%;
+	margin-left: 30px;
+}
+.asitem,
+.date,
+.time{
+	width: 40vw;
+}
+.date input{
+	margin-left: 5%;
+}
+
+.time input{
+	margin-left: 3%;
+}
+
+.pr{
+	margin-left: 20%;
+}
+.pr input{
+	width: 75%;
+	height: 15%;;
+	font-size: 30px;
+}
+
