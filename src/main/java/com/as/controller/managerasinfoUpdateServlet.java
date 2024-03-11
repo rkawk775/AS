@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.as.dao.ManagerAsinfoDAO;
+import com.as.dao.managerAsinfoDAO;
 import com.as.dto.reservationDTO;
 
 /**
- * Servlet implementation class AsinfoUpdateServlet
+ * Servlet implementation class managerasinfoUpdateServlet
  */
 @WebServlet("/managerasinfoUpdate.do")
-public class managerAsinfoUpdateServlet extends HttpServlet {
+public class managerasinfoUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public managerAsinfoUpdateServlet() {
+    public managerasinfoUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,9 +32,10 @@ public class managerAsinfoUpdateServlet extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String res_id = request.getParameter("res_id");
-        ManagerAsinfoDAO adao = ManagerAsinfoDAO.getInstance();
-        reservationDTO dto = adao.selectAsinfobyres_id(res_id);
-        request.setAttribute("managerasinfoUpdate", dto);
+        
+        managerAsinfoDAO mdao = managerAsinfoDAO.getInstance();
+        reservationDTO rdto = mdao.selectAsinfobyres_id(res_id);
+        request.setAttribute("rdto", rdto);
         RequestDispatcher rd = request.getRequestDispatcher("asInfo/managerasinfoUpdate.jsp");
         rd.forward(request, response);
     }
@@ -54,7 +55,7 @@ public class managerAsinfoUpdateServlet extends HttpServlet {
         dto.setRes_time(res_time);
         dto.setRes_id(res_id);
         
-        ManagerAsinfoDAO adao = ManagerAsinfoDAO.getInstance();
+        managerAsinfoDAO adao = managerAsinfoDAO.getInstance();
         adao.updateAsinfo(dto);
         
         response.sendRedirect("managerasinfoUpdate.do");    
