@@ -7,7 +7,7 @@
 <style>
 	.one-header {
 	    display: block;
-	    background-color: #000;
+	    background-color: #1f2029;
 	    max-height: 115px;
 	    flex: none;
 	    min-height: 65px;
@@ -20,7 +20,7 @@
 	}
 	
 	.logo {
-	    background-color: #000000;
+	    background-color: #1f2029;
 	    margin: 0;
 	}
 </style>

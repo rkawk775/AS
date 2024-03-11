@@ -2,13 +2,13 @@
     width: 970px;
     height: 1000px;
     margin: 0 auto;
-    background-color: black;
+    background-color: #1f2029;
     color: rgb(192, 192, 192);
 }
 
 /* 기존 스타일들 */
 body {
-	background-color: rgb(42, 43, 56);
+	background-color: #2a2b38;
 	margin: 0;
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
 }
