@@ -13,6 +13,7 @@
 <body>
 	<div id="delete" align="center">
 		<h1 id="check">예약삭제</h1>
+		<br>
 		<form method="post" action="asinfoDelete.do">
 			<table>
 				<tr>

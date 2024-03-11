@@ -13,6 +13,7 @@
 <body>
 	<div id="wrap" align="center">
 		<h1 id="check">예약 확인 리스트</h1>
+		<br>
 		<table class="list">
 			<tr>
 				<th>AS품목</th>
