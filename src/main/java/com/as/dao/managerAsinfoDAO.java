@@ -10,15 +10,15 @@ import com.as.dto.reservationDTO;
 
 import util.DBManager;
 
-public class ManagerAsinfoDAO {
+public class managerAsinfoDAO {
 
-    private ManagerAsinfoDAO() {
+    private managerAsinfoDAO() {
 
     }
 
-    private static ManagerAsinfoDAO instance = new ManagerAsinfoDAO();
+    private static managerAsinfoDAO instance = new managerAsinfoDAO();
 
-    public static ManagerAsinfoDAO getInstance() {
+    public static managerAsinfoDAO getInstance() {
         return instance;
     }
 

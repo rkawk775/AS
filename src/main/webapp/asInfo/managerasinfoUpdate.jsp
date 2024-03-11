@@ -37,11 +37,9 @@
 					<th>예약번호</th>
 					<td><input type="text" name="res_id"
 						value="${reservation.res_id}" readonly></td>
-				</tr>		
+				</tr>
+					<td><input type="submit" value="변경"> <input type="button" value="목록" onclick="location.href='reservationList.do'"></td>
 			</table>
-			<br>
-			<input type="submit" value="변경"> <input type="button"
-				value="목록" onclick="location.href='managerasinfoList.do'">
 		</form>
 	</div>
 </body>
