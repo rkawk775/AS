@@ -48,15 +48,15 @@ public class reservationDTO {
 	public void setRes_id(Integer res_id) {
 		this.res_id = res_id;
 	}
-	public membershipDTO getMembership() {
-        return membership;
-    }
     public String getPhone() {
 		return phone;
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public membershipDTO getMembership() {
+        return membership;
+    }
 	public void setMembership(membershipDTO membership) {
         this.membership = membership;
     }

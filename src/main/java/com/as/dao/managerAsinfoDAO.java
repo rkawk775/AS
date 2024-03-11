@@ -118,24 +118,7 @@ public class managerAsinfoDAO {
         return rdto;
     }
 
-    public void deleteAsinfo(int res_id) {
-        String sql = "DELETE FROM reservation WHERE res_id=?";
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-
-        try {
-            conn = DBManager.getConnection();
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, res_id);
-            pstmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(conn, pstmt);
-        }
-    }
-
-    public void updateAsinfo(reservationDTO dto) {
+    public void updateAsinfo(reservationDTO rdto) {
         String sql = "UPDATE reservation SET res_date=?, res_time=? WHERE res_id=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -143,9 +126,10 @@ public class managerAsinfoDAO {
         try {
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, dto.getRes_date());
-            pstmt.setString(2, dto.getRes_time());
-            pstmt.setInt(3, dto.getRes_id());
+            
+            pstmt.setString(1, rdto.getRes_date());
+            pstmt.setString(2, rdto.getRes_time());
+            pstmt.setInt(3, rdto.getRes_id());
             pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

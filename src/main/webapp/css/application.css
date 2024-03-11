@@ -5,21 +5,16 @@ h1{
 	text-align: center;
 }
 
-.back{
-	margin: 0 auto;
-	border: solid 1px black;
-	width : 1000px;
-}
+
 #bg{
-	width:1000px;
+	width: 70vw;
+	height: 80vh;
 	margin: 0 auto;
-	clear: both;
-	
-	
+	background-color: gray;
 }
 #bg h2{
 	margin: 0 auto;
-	background-color: #0072de;
+	
 	text-align: center;
 	margin-bottom: 20px;
 }

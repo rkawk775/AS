@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ include file="mainHeader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="script/main.js"></script>
 <link rel="stylesheet" type="text/css" href="css/application.css">
+<link rel="stylesheet" type="text/css" href="css/mainpage.css">
 </head>
 <body>
 
@@ -23,17 +24,15 @@
     SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
     String strDate = simpleDate.format(currentDate);
 %>
-<h1>AS 신청하기</h1>
-<div class="back">
     <div id="bg">
         <form action="application.do" method="post" name="frm">
-            <div class="asop">
+            <div class="asopbg">
                 <h2>AS 품목</h2>
                 <p class="op2"><input type="checkbox" name="asitem" value="휴대폰" />스마트 폰</p>
                 <p class="op2"><input type="checkbox" name="asitem" value="탭" />탭</p>
                 <p class="op2"><input type="checkbox" name="asitem" value="워치" />워치</p><br>
             </div>
-            <div id="bg">
+            <div id="datebg">
                 <h2>날짜 선택</h2>
                 <div class="date">
              <div class="hidden">
@@ -55,7 +54,7 @@
                     %>
                 </div>
             </div>
-<div id="bg">
+<div id="timebg">
 <h2>시간 선택</h2>
 <div class="time">
 	<input type="radio" name="res_time" value="13:00">13:00
@@ -66,7 +65,7 @@
 	<input type="radio" name="res_time" value="18:00">18:00
 </div>
 </div>
-<div id="bg">
+<div id="prbg">
 <h2>개인정보 입력</h2>
 <div class="pr">
 <h4>이름</h4>
@@ -88,7 +87,7 @@
 </div>
 </form>
 </div>
-</div>
+
 
 
 </body>
