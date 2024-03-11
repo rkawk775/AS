@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="logout" align="right">
-			<a href="">로그아웃</a>
+			<a href="login.do">로그아웃</a>
 		</div>
 	</header>
 </body>
