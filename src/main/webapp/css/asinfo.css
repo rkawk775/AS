@@ -8,13 +8,13 @@ body {
     width: 450px;
     height: 252px;
     margin: 0 auto;
-    background-color: rgb(192, 192, 192);
+    background-color: white;
 }
 #delete {
     width: 450px;
     height: 314px;
     margin: 0 auto;
-    background-color: rgb(192, 192, 192);
+    background-color: white;
 }
 
 table {
@@ -66,4 +66,8 @@ a:hover {
 #button:hover{
 	background-color: #77BBDD;
 	margin: 0 auto;
+}
+
+#cldelete{
+    border: none;	
 }

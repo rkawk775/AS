@@ -13,6 +13,7 @@
 <body>
 	<div id="delete" align="center">
 		<h1 id="check">예약삭제</h1>
+		<br>
 		<form method="post" action="asinfoDelete.do">
 			<table>
 				<tr>
@@ -42,7 +43,7 @@
 				</tr>			
 			</table>
 			<h3>삭제하면 복구할수 없습니다. 신중히 선택해주세요.</h3>
-			<table>
+			<table id="cldelete">
 			    <tr>
 			        <td><input type="submit" value="삭제"  id="button">
 			            <input type="button" value="목록" onclick="location.href='asinfoList.do'" id="button"></td>
