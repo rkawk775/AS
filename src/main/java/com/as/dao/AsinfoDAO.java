@@ -111,26 +111,4 @@ public class AsinfoDAO {
 		}
 
 	}
-	
-	public void updateAsinfo(reservationDTO dto) {
-		
-		String sql = "UPDATE reservation SET res_date=?, res_time=? where res_id=?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		try {
-			conn = DBManager.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dto.getRes_date());
-			pstmt.setString(2, dto.getRes_time());
-			
-			pstmt.setInt(3, dto.getRes_id());
-			pstmt.executeUpdate();			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBManager.close(conn, pstmt);
-		}	
-	}
 }
