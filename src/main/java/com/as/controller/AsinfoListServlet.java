@@ -2,9 +2,6 @@ package com.as.controller;
 
 import java.io.IOException;
 
-
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +32,7 @@ public class AsinfoListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AsinfoDAO adao = AsinfoDAO.getInstance();
-		reservationDTO asinfoList = adao.selectUserAsinfo("email");
+		reservationDTO asinfoList = adao.selectUserAsinfo(/*"email"*/);
 		request.setAttribute("asinfoList", asinfoList);
 
 		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoList.jsp");

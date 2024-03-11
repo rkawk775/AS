@@ -1,30 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="mainHeader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/mainpage.css">
 </head>
 <body>
-
+<div id="content">
 <c:forEach var=" member" items="${member}">
+<span>
 <a href="application.do?email=bbbbb@naver.com">예약 신청</a>
-
+</span>
 <br>
+
 
 <a href="change.do?email=bbbbb@naver.com">예약 변경</a>
 <br>
-<form action="check.do" method="post">
-<input type="submit" value="예약 조회">
-</form>
+<a href="check.do?email=bbbbb@naver.com">예약 조회</a>
+</c:forEach>
+</div>
 
- <table>
- 	<th>연결 확인</th>
- 	<tr>
- 		<td>${member}</td>
- 	</tr>
- </table>
- </c:forEach>
 </body>
 </html>
