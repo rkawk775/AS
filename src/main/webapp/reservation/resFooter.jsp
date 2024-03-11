@@ -8,9 +8,9 @@
 	.one-footer {
 	    display: block;
 	    background-color: #1f2029;
-	    max-height: 90px;
+	    max-height: 115px;
 	    flex: none;
-	    min-height: 56px;
+	    min-height: 65px;
 	}
 	
 	.footer-inner {
