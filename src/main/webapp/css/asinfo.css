@@ -6,7 +6,7 @@ body {
 
 #wrap {
     width: 450px;
-    height: 900px;
-    margin: 0 auto;
+    height: 600px;
     background-color: grey;
+    text-align: center;
 }
