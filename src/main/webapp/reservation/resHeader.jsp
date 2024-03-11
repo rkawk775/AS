@@ -23,6 +23,10 @@
 	    background-color: #1f2029;
 	    margin: 0;
 	}
+	
+	.logout {
+		color: rgb(192, 192, 192);
+	}
 </style>
 </head>
 <body>
@@ -35,7 +39,7 @@
 			</div>
 		</div>
 		<div class="logout" align="right">
-			<a href="">로그아웃</a>
+			<a href="login.do" >로그아웃</a>
 		</div>
 	</header>
 </body>
