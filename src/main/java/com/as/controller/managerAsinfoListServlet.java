@@ -12,20 +12,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.as.dao.AsinfoDAO;
+import com.as.dao.ManagerAsinfoDAO;
+import com.as.dao.reservationDAO;
 import com.as.dto.reservationDTO;
 
 /**
  * Servlet implementation class asinfoListServlet
  */
-@WebServlet("/asinfoList.do")
-public class AsinfoListServlet extends HttpServlet {
+@WebServlet("/managerasinfoList.do")
+public class managerAsinfoListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AsinfoListServlet() {
+    public managerAsinfoListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +34,19 @@ public class AsinfoListServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		AsinfoDAO adao = AsinfoDAO.getInstance();
-		reservationDTO asinfoList = adao.selectUserAsinfo("email");
-		request.setAttribute("asinfoList", asinfoList);
-
-		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoList.jsp");
-		rd.forward(request, response);
-	
-	}
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String resId = request.getParameter("res_id");
+        
+        if (resId != null) {
+            reservationDAO rdao = reservationDAO.getInstance(); // reservationDAO 인스턴스 생성
+            reservationDTO reservation = rdao.selectReservationByRes_id(resId);
+            request.setAttribute("reservation", reservation);
+        }
+        
+        RequestDispatcher rd = request.getRequestDispatcher("asInfo/managerAsinfoList.jsp");
+        rd.forward(request, response);
+    }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
