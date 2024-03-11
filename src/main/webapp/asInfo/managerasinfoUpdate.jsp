@@ -15,8 +15,7 @@
             <table>
                 <tr>
                     <th>AS품목</th>
-                    <td><input type="text" name="asitem" value="${rdto.asitem}"
-                        readonly></td>
+                    <td><input type="text" name="asitem" value="${rdto.asitem}" readonly></td>
                 </tr>
                 <tr>
                     <th>날짜</th>
@@ -40,8 +39,8 @@
                 </tr>       
             </table>
             <br>
-            <input type="submit" value="변경"> <input type="button"
-                value="목록" onclick="location.href='reservationList.do'">
+            <input type="submit" value="변경">
+            <input type="button" value="목록" onclick="location.href='reservationList.do'">
         </form>
     </div>
 </body>

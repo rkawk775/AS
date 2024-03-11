@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="asinfoHeader.jsp" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,11 @@
 <title>예약정보 삭제</title>
 <link rel="stylesheet" type="text/css" href="css/asinfo.css">
 </head>
+<br>
+<br>
 <body>
 	<div id="delete" align="center">
-		<h1>예약삭제</h1>
+		<h1 id="check">예약삭제</h1>
 		<form method="post" action="asinfoDelete.do">
 			<table>
 				<tr>
@@ -38,11 +41,13 @@
 						value="${asinfoDelete.res_id}" readonly></td>
 				</tr>			
 			</table>
-			<br>
 			<h3>삭제하면 복구할수 없습니다. 신중히 선택해주세요.</h3>
-			<br> <input type="hidden" name="res_id" value="${asinfoDelete.res_id}">
-			<input type="submit" value="삭제"> <input type="button"
-				value="목록" onclick="location.href='asinfoList.do'">
+			<table>
+			    <tr>
+			        <td><input type="submit" value="삭제"  id="button">
+			            <input type="button" value="목록" onclick="location.href='asinfoList.do'" id="button"></td>
+			    </tr>
+			</table>
 		</form>
 	</div>
 </body>
