@@ -32,13 +32,21 @@ table {
     border-collapse: collapse;
     font-size: 12px;
     line-height: 24px;
+    background-color: white;
 }
 
-table td, th {
+table th {
     border: gray solid 1px;
     padding: 5px;
     text-align: center;
     color: rgb(192, 192, 192);
+}
+
+table td {
+    border: gray solid 1px;
+    padding: 5px;
+    text-align: center;
+    color: black;
 }
 
 th {
@@ -47,7 +55,7 @@ th {
 
 a {
     text-decoration: none;
-    color: rgb(192, 192, 192);
+    color: black;
 }
 
 a:hover {
