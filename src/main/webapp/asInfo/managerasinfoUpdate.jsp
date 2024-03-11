@@ -15,8 +15,7 @@
             <table>
                 <tr>
                     <th>AS품목</th>
-                    <td><input type="text" name="asitem" value="${rdto.asitem}"
-                        readonly></td>
+                    <td><input type="text" name="asitem" value="${rdto.asitem}" readonly></td>
                 </tr>
                 <tr>
                     <th>날짜</th>
