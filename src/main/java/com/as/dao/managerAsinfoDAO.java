@@ -127,8 +127,10 @@ public class managerAsinfoDAO {
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
             
+            // 문자열로 설정
             pstmt.setString(1, rdto.getRes_date());
             pstmt.setString(2, rdto.getRes_time());
+
             pstmt.setInt(3, rdto.getRes_id());
             pstmt.executeUpdate();
         } catch (Exception e) {

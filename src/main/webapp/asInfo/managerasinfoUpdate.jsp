@@ -40,8 +40,8 @@
                 </tr>       
             </table>
             <br>
-            <input type="submit" value="변경"> <input type="button"
-                value="목록" onclick="location.href='reservationList.do'">
+            <input type="submit" value="변경">
+            <input type="button" value="목록" onclick="location.href='reservationList.do'">
         </form>
     </div>
 </body>
