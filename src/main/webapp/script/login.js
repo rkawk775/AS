@@ -1,7 +1,7 @@
 function loginCheck(){
 	if(document.loginfrm.email.value.length == 0){
 		alert("이메일을 입력하세요");
-		frm.eamil.focus();
+		loginfrm.email.focus();
 		return false;
 	}
 	
@@ -17,4 +17,5 @@ function loginCheck(){
         return false;
     }
     return true;
+    
 }

@@ -11,7 +11,6 @@
 <script type="text/javascript" src="script/join.js"></script>
 </head>
 <body>
-
 	<a href="https://www.samsungsvc.co.kr/" class="logo" target="_blank">
 	    <img src="images/loginLogo.PNG">
 	  </a>
@@ -32,7 +31,7 @@
 	                    <div class="section text-center">
 	                      <h4 class="mb-4 pb-3">Log In</h4>
 	                      <div class="form-group">
-	                        <input type="text" name="email" class="form-style" placeholder="이메일 입력하세요." autocomplete="off" value="${email}">
+	                        <input type="text" name="email" class="form-style" placeholder="이메일 입력하세요."  value="${email}">
 	                        <i class="input-icon uil uil-at"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
@@ -65,7 +64,7 @@
 	                        <i class="input-icon uil uil-at"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
-	                        <input type="password" name="pw_check" class="form-style" placeholder="비밀번호 중복 확인"autocomplete="off">
+	                        <input type="password" name="pw_check" class="form-style" placeholder="비밀번호 중복 확인" autocomplete="off">
 	                        <i class="input-icon uil uil-lock-alt"></i>
 	                      </div>
 	                      <div class="form-group mt-2">
