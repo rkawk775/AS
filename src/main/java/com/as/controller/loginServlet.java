@@ -14,7 +14,8 @@ import com.as.dao.LoginDAO;
 import com.as.dto.membershipDTO;
 
 /**
- * Servlet implementation class loginServlet
+ * Servlet imple
+ * mentation class loginServlet
  */
 @WebServlet("/login.do")
 public class loginServlet extends HttpServlet {

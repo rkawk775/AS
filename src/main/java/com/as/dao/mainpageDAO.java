@@ -88,6 +88,34 @@ public class mainpageDAO {
 		
 	}
 	
+	public int compare (String email) {
+		int result = 1;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		System.out.println("도착 : "+result);
+		String sql = "select * from reservation where email=?";
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = 0;
+			}else {
+				result = 1;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}return result;
+	}
+	
+	
+	
+	
+	
 	
 	public void insertas(reservationDTO rdto) {
 		Connection conn = null;

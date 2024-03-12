@@ -14,11 +14,10 @@ function asCheck(){
        }
 
       
-      if(a < 1){
+	if(a < 1){
 		alert("as 항목을 선택해주세요");
-      }
-      
-	
+		return false;
+      }  
 	if(document.frm.res_date.value == ""){
 		alert("날짜를 정해주세요");
 		return false;
@@ -36,8 +35,6 @@ function asCheck(){
 			return false;
 			}
 	}
-	
-	
 	return true;
 
 }
