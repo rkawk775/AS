@@ -50,7 +50,7 @@ public class AsinfoDeleteServlet extends HttpServlet {
 		String res_id = request.getParameter("res_id");
 		AsinfoDAO dao = AsinfoDAO.getInstance();
 		dao.deleteAsinfo(res_id);
-		response.sendRedirect("asinfoList.do");
+		response.sendRedirect("mainpage.do");
 	}
 
 }
