@@ -10,7 +10,7 @@
 </head>
 <body>
 <form method="post" name="frm" action="join.do">
-<h1 align="center">회원 가입</h4>
+<h1 align="center">회원 가입</h1>
 <table align="center">
     <tr>
     	<td>이메일</td>

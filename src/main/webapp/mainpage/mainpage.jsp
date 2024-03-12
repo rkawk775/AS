@@ -19,7 +19,7 @@
 
 <a href="change.do?email=bbbbb@naver.com">예약 변경</a>
 <br>
-<a href="check.do?email=bbbbb@naver.com">예약 조회</a>
+<a href="asinfoList.do?email=bbbbb@naver.com">예약 조회</a>
 </c:forEach>
 </div>
 
