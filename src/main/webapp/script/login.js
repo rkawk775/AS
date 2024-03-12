@@ -7,7 +7,7 @@ function loginCheck(){
 	
 	if(document.loginfrm.pw.value.length == 0){
 		alert("비밀번호를 입력하세요");
-		frm.pw.focus();
+		loginfrm.pw.focus();
 		return false;
 	}
 
