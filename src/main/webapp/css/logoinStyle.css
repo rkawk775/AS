@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-
 body{
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -77,8 +76,9 @@ h6 span{
   border-radius: 50%;
   color: #ffeba7;
   background-color: #102770;
-  font-family: 'unicons';
   content: '\f245';
+  /*background-image:url(images/pointer.png);*/
+  font-family: 'unicons';
   z-index: 20;
   top: -10px;
   left: -10px;
@@ -142,7 +142,7 @@ h6 span{
   width: 100%;
   padding: 0 35px;
   top: 43%;
-  left: 0;
+  left: 5%;
   transform: translate3d(0, -50%, 35px) perspective(100px);
   z-index: 20;
   display: block;
