@@ -10,6 +10,7 @@
 </head>
 <body>
 <div id="content">
+<h3 class="messeage" style="text-align: center;">${message}</h3>
 <c:forEach var=" member" items="${member}">
 <span>
 <a href="application.do?email=bbbbb@naver.com">예약 신청</a>

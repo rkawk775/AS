@@ -53,13 +53,22 @@ public class applicationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		mainpageDAO mdao = mainpageDAO.getInstance();
+		String email = request.getParameter("email");
+		int result = mdao.compare(email);
 		
+		System.out.println("result : "+result);
+		
+		if(result == 0) {
+			System.out.println("true도착");
+			request.setAttribute("message", "이미 신청한 이력이 있습니다.");
+		}else if(result == 1){
+		System.out.println("else도착");	
 		String[] str = request.getParameterValues("asitem");
 		String res_date = request.getParameter("res_date");
 		String res_time = request.getParameter("res_time");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		String email = request.getParameter("email");
 		String asitem = "";
 		for(int i=0;i<str.length;i++) {
 			if(i == 0) {
@@ -81,17 +90,11 @@ public class applicationServlet extends HttpServlet {
 		rdto.setRes_time(res_time);
 		rdto.setName(name);
 		rdto.setEmail(email);
-		
-
-	
-		
-		mainpageDAO mdao = mainpageDAO.getInstance();
-		
 		mdao.insertas(rdto);
+		}
 		
-		response.sendRedirect("mainpage.do");
-		//RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
-		//rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
+		rd.forward(request, response);
 		
 	}
 
