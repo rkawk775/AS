@@ -17,35 +17,30 @@
 		<br>
 			<div id="cwitem">
 				<h2>AS품목</h2>
-				<br>
 				<p><input type="text" name="asitem" value="${asinfoList.asitem}"
 					    readonly></p>
 			</div>
 			<hr width="70%">
 			<div id="asdate">	
 				<h2>날짜</h2>
-				<br>
 				<p><input type="text" name="res_date" value="${asinfoList.res_date}"
 						readonly></p>
 			</div>
 			<hr width="70%">
 			<div id="astime">	
 				<h2>시간</h2>
-				<br>
 				<p><input type="text" name="res_time"
 						value="${asinfoList.res_time}" readonly></p>
 			</div>
 			<hr width="70%">
 			<div>	
 				<h2>이름</h2>
-				<br>
 				<p><input type="text" name="res_name"
 						value="${asinfoList.name}" readonly></p>			
 			</div>
 			<hr width="70%">		
 			<div>	
 				<h2>예약번호</h2>
-				<br>
 				<p><input type="text" name="res_id"
 						value="${asinfoList.res_id}" readonly></p>						
 			</div>
