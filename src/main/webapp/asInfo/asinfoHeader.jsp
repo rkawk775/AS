@@ -26,19 +26,20 @@
 	.logout{
 		margin-right: 15%;
 	}
+
 </style>
 </head>
 <body>
 	<header class="one-header">
-		<div class="header-inner">
+		<div class="header-inner" align="center">
 			<div class="logo">
-				<h1>
+				<h1 id="samsung">
 					SAMSUNG<br>삼성전자서비스센터
 				</h1>
 			</div>
 		</div>
 		<div class="logout" align="right">
-			<a href="">로그아웃</a>
+			<a href="" id="logout">로그아웃</a>
 		</div>
 	</header>
 </body>

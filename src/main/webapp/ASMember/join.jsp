@@ -26,7 +26,7 @@
     </tr>
     <tr>
     	<td>이름</td>
-    	<td><input type="text" name="name" placeholder="홍길동s"><td>
+    	<td><input type="text" name="name" placeholder="홍길동"><td>
     </tr>
     <tr>
     	<td>전화번호</td>
