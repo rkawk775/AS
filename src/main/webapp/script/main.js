@@ -12,6 +12,7 @@ function asCheck(){
               a++;
           }
        }
+       
 
       
 	if(a < 1){
