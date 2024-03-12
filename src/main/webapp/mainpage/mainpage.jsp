@@ -10,10 +10,9 @@
 </head>
 <body>
 <div id="content">
-<h3 class="messeage" style="text-align: center;">${message}</h3>
-
 <c:forEach var="mem" items="${mem}">
-<h3>${mem.name}님 환영합니다</h3>
+<h3 class="messeage" style="text-align: center;">${mem.name}님 환영합니다</h3>
+<h3 class="messeage" style="text-align: center;">${message}</h3>
 <span>
 <a href="application.do?email=${mem.email}">예약 신청</a>
 </span>
