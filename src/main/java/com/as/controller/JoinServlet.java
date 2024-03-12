@@ -45,8 +45,7 @@ public class JoinServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		Connection conn = DBManager.getConnection();
-		
+
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
@@ -62,6 +61,7 @@ public class JoinServlet extends HttpServlet {
 		int result = jdao.insertJoin(mdto);
 		
 		HttpSession session = request.getSession();
+		
 		if(result == 1) {
 			session.setAttribute("email", mdto.getEmail());
 			request.setAttribute("message", "회원가입에 성공 했습니다.");

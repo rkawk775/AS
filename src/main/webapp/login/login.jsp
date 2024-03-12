@@ -11,7 +11,6 @@
 <script type="text/javascript" src="script/join.js"></script>
 </head>
 <body>
-<form method="post" name="loginfrm" action="login.do">
 	<a href="https://www.samsungsvc.co.kr/" class="logo" target="_blank">
 	    <img src="images/loginLogo.PNG">
 	  </a>
@@ -26,12 +25,13 @@
 	                  <label for="reg-log"></label>
 	            <div class="card-3d-wrap mx-auto">
 	              <div class="card-3d-wrapper">
+                    <form method="post" name="loginfrm" action="login.do">
 	                <div class="card-front">
 	                  <div class="center-wrap">
 	                    <div class="section text-center">
 	                      <h4 class="mb-4 pb-3">Log In</h4>
 	                      <div class="form-group">
-	                        <input type="text" name="email" class="form-style" placeholder="이메일 입력하세요." autocomplete="off" value="${email}">
+	                        <input type="text" name="email" class="form-style" placeholder="이메일 입력하세요."  value="${email}">
 	                        <i class="input-icon uil uil-at"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
@@ -47,30 +47,32 @@
 	                        </div>
 	                      </div>
 	                    </div>
+                       </form>
 	                  
-	                  
+                    
 	                <div class="card-back">
+	                <form method="post" name="frm" action="join.do">
 	                  <div class="center-wrap">
 	                    <div class="section text-center">
 	                      <h4 class="mb-4 pb-3">Sign Up</h4>
 	                      <div class="form-group">
-	                        <input type="text" name="logname" class="form-style" placeholder="이메일" autocomplete="off">
+	                        <input type="text" name="email" class="form-style" placeholder="이메일" autocomplete="off">
 	                        <i class="input-icon uil uil-user"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
-	                        <input type="password" name="logemail" class="form-style" placeholder="비밀번호" autocomplete="off">
+	                        <input type="password" name="pw" class="form-style" placeholder="비밀번호" autocomplete="off">
 	                        <i class="input-icon uil uil-at"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
-	                        <input type="password" name="logpass" class="form-style" placeholder="비밀번호 중복 확인"autocomplete="off">
+	                        <input type="password" name="pw_check" class="form-style" placeholder="비밀번호 중복 확인" autocomplete="off">
 	                        <i class="input-icon uil uil-lock-alt"></i>
 	                      </div>
 	                      <div class="form-group mt-2">
-	                        <input type="text" name="logpass" class="form-style" placeholder="이름" autocomplete="off">
+	                        <input type="text" name="name" class="form-style" placeholder="이름" autocomplete="off">
 	                        <i class="input-icon uil uil-lock-alt"></i>
 	                      </div>
 	                      <div class="form-group mt-2">
-	                        <input type="text" name="logpass" class="form-style" placeholder="전화번호"  autocomplete="off">
+	                        <input type="text" name="phone" class="form-style" placeholder="전화번호"  autocomplete="off">
 	                        <i class="input-icon uil uil-lock-alt"></i>
 	                      </div>
 	                      <input type="submit" value="회원가입" class="btn2 mt-4" onclick="return joinCheck()">
@@ -78,6 +80,7 @@
 	                      		<div class="msg"><h2>${message}</h2></div>  
 	                        </div>
 	                      </div>
+	                      </form>
 	                    </div>
 	                  </div>
 	                </div>
@@ -86,6 +89,5 @@
 	          </div>
 	      </div>
 	  </div>
-</form>
 </body>
 </html>
