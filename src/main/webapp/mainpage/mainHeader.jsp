@@ -28,7 +28,7 @@
 	}
 </style>
 </head>
-<body>
+<body id ="header">
 	<header class="one-header">
 		<div class="header-inner">
 			<div class="logo">

@@ -25,20 +25,7 @@ a:hover {
     text-decoration: underline;
     color: rgb(192, 192, 192);
 }
-
-#back{
-	width: 70vw;
-	margin-left: 15vw;
+#samsung{
+	color: blue;
 }
 
-#back a{
-	text-decoration: none;
-	width: 50px;
-	height: 35px;
-}
-#back a:hover{
-	background-color: #77BBDD;
-	margin: 0 auto;
-	width: 50px;
-	height: 35px;
-}
