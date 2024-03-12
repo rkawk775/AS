@@ -2,14 +2,14 @@ function joinCheck() {
 	
 	if (document.frm.email.value.length==0) {
 		alert("이메일을 입력해주세요.");
-		frm.eamil.focus();
+		frm.email.focus();
 		return false;
 	}
 	const email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 	
 	if (document.frm.email.value.length==false) {
 		alert("이메일형식이 올바르지 않습니다.");
-		frm.eamil.focus();
+		frm.email.focus();
 		return false;
 	}
 	

@@ -10,11 +10,11 @@
 </head>
 <body>
 <form method="post" name="frm" action="join.do">
-<h1 align="center">회원 가입</h4>
+<h1 align="center">회원 가입</h1>
 <table align="center">
     <tr>
     	<td>이메일</td>
-    	<td><input type="email" name="email"></td>
+    	<td><input type="email" name="email" placeholder="deawoo@gmail.com"></td>
     </tr>
     <tr>
     	<td>비밀번호</td>
@@ -26,7 +26,7 @@
     </tr>
     <tr>
     	<td>이름</td>
-    	<td><input type="text" name="name"><td>
+    	<td><input type="text" name="name" placeholder="홍길동"><td>
     </tr>
     <tr>
     	<td>전화번호</td>
@@ -36,7 +36,7 @@
     	<td colspan="2" align="center">
     		<input type="submit" value="가입" onclick="return joinCheck()">
     		&nbsp;&nbsp;&nbsp;&nbsp;
-        	<input type="reset" value="취소">
+        	<input type="button" value="취소" onclick="location.href='login.do'">
         <td>
     </tr>
     <tr>
