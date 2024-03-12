@@ -11,20 +11,13 @@
 <meta charset="UTF-8">
 <title>예약정보 변경</title>
 <link rel="stylesheet" type="text/css" href="css/managerReservation.css">
+<script type="text/javascript" src="script/managerReservation.js"></script>
 </head>
 <body>
-	<%
-	    // 현재 날짜 가져오기
-	    Date currentDate = new Date();
-	
-	    // SimpleDateFormat을 사용하여 날짜 포맷팅
-	    SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
-	    String strDate = simpleDate.format(currentDate);
-	%>
 	<div id="wrap" align="center">
         <h1>예약 수정</h1>
 		<div id="inside" align="center">
-	        <form method="post" action="managerasinfoUpdate.do">
+	        <form method="post" action="managerasinfoUpdate.do" name="frm">
 	            <table>
 	                <tr>
 	                    <th>AS품목</th>
@@ -52,10 +45,12 @@
 	                </tr>       
 	            </table>
 	            <br>
+	            <div class="button" align="center">
+			        <input type="submit" value="변경" class="btn" onclick="return managerCheck()">
+			        <input type="button" value="목록" onclick="location.href='reservationList.do'" class="btn">
+			    </div>
 	        </form>
      	</div>
-        <input type="submit" value="변경">
-        <input type="button" value="목록" onclick="location.href='reservationList.do'">
     </div>
 </body>
 </html>
