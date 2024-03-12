@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>예약정보 삭제</title>
 <link rel="stylesheet" type="text/css" href="css/asinfo.css">
+<script type="text/javascript" src="script/asinfo.js"></script>
 </head>
 <br>
 <br>
