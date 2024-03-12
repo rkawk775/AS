@@ -20,6 +20,7 @@
 <br>
 
 
+
 <a href="change.do?email=${mem.email}">예약 변경</a>
 <br>
 <a href="asinfoList.do?email=${mem.email}">예약 조회</a>
