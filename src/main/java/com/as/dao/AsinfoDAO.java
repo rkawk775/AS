@@ -22,19 +22,19 @@ public class AsinfoDAO {
 
 	}
 
-	public reservationDTO selectUserAsinfo(/*String email*/) {
+	public reservationDTO selectUserAsinfo(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		reservationDTO rdto =null;
 
-		String sql = "SELECT r.*, m.phone FROM reservation r JOIN membership m ON r.email = m.email WHERE r.email='bbbbb@naver.com'";
+		String sql = "SELECT r.*, m.phone FROM reservation r JOIN membership m ON r.email = m.email WHERE r.email=?";
 
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-			//pstmt.setString(1, email);
+			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				rdto = new reservationDTO();
