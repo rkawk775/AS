@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>예약정보 삭제</title>
 <link rel="stylesheet" type="text/css" href="css/asinfo.css">
+<script type="text/javascript" src="script/asinfo.js"></script>
 </head>
 <br>
 <br>
@@ -19,7 +20,6 @@
 			<div>
 				<div>
 					<h2>AS품목</h2>
-					<br>
 					<p><input type="text" name="asitem" value="${asinfoDelete.asitem}"
 					    readonly></p>
 				</div>
@@ -27,28 +27,24 @@
 			<hr width="70%">
 			<div>
 					<h2>날짜</h2>
-					<br>
 					<p><input type="text" name="res_date" value="${asinfoDelete.res_date}"
 						readonly></p>
 			</div>
 			<hr width="70%">
 			<div>		
 					<h2>시간</h2>
-					<br>
 					<p><input type="text" name="res_time"
 						value="${asinfoDelete.res_time}" readonly></p>
 			</div>
 			<hr width="70%">
 			<div>	
 					<h2>이름</h2>
-					<br>
 					<p><input type="text" name="res_name"
 						value="${asinfoDelete.name}" readonly></p>
 			</div>
 			<hr width="70%">
 			<div>	
 					<h2>예약번호</h2>
-					<br>
 					<p><input type="text" name="res_id"
 						value="${asinfoDelete.res_id}" readonly></p>
 			</div>

@@ -32,9 +32,10 @@ public class AsinfoListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AsinfoDAO adao = AsinfoDAO.getInstance();
-		reservationDTO asinfoList = adao.selectUserAsinfo("email");
-		String res_id = request.getParameter("res_id");
+		String email = request.getParameter("email");
+		reservationDTO asinfoList = adao.selectUserAsinfo(email);
 		request.setAttribute("asinfoList", asinfoList);
+		String res_id = request.getParameter("res_id");
 		if(res_id == null) {
 			request.setAttribute("message", "등록된 예약이 없습니다.");
 		}
