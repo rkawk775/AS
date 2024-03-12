@@ -21,28 +21,28 @@ public class mainpageDAO {
 		return instance;
 	}
 	
-	public List<membershipDTO> selectAll(){
+	public membershipDTO selectAll(String email){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql= "select *  from membership where email='bbbbb@naver.com'";
+		String sql= "select *  from membership where email= ?";
 		/*String sql= "select * from membership order by email desc";*/
-		List<membershipDTO> list = new ArrayList<membershipDTO>();
+		membershipDTO mdto = null;
 		
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			//System.out.println(rs);
 			while(rs.next()) {
 				//System.out.println("이동");
-				membershipDTO mdto = new membershipDTO();
+				mdto = new membershipDTO();
 				mdto.setEmail(rs.getString("email"));
 				mdto.setPw(rs.getString("pw"));
 				mdto.setName(rs.getString("name"));
 				mdto.setPhone(rs.getString("phone"));
-				list.add(mdto);
 				//System.out.println(mdto.getName());
 			}
 			
@@ -51,7 +51,7 @@ public class mainpageDAO {
 			e.printStackTrace();
 		}finally {
 			DBManager.close(conn, pstmt, rs);
-		}return list;
+		}return mdto;
 		
 		
 	}
@@ -93,7 +93,6 @@ public class mainpageDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		System.out.println("도착 : "+result);
 		String sql = "select * from reservation where email=?";
 		try {
 			conn = DBManager.getConnection();

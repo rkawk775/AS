@@ -11,16 +11,18 @@
 <body>
 <div id="content">
 <h3 class="messeage" style="text-align: center;">${message}</h3>
-<c:forEach var=" member" items="${member}">
+
+<c:forEach var="mem" items="${mem}">
+<h3>${mem.name}님 환영합니다</h3>
 <span>
-<a href="application.do?email=bbbbb@naver.com">예약 신청</a>
+<a href="application.do?email=${mem.email}">예약 신청</a>
 </span>
 <br>
 
 
-<a href="change.do?email=bbbbb@naver.com">예약 변경</a>
+<a href="change.do?email=${mem.email}">예약 변경</a>
 <br>
-<a href="asinfoList.do?email=bbbbb@naver.com">예약 조회</a>
+<a href="asinfoList.do?email=${mem.email}">예약 조회</a>
 </c:forEach>
 </div>
 

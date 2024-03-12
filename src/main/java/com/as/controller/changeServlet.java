@@ -79,8 +79,9 @@ public class changeServlet extends HttpServlet {
 		rdto.setEmail(email);
 		
 		mdao.updateas(rdto);
-		response.sendRedirect("mainpage.do");
-		
+		//response.sendRedirect("mainpage.do");
+		RequestDispatcher rd = request.getRequestDispatcher("mainpage.do");
+		rd.forward(request, response);
 		
 	}
 

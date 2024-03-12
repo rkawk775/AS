@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.ha.backend.Sender;
+
 import com.as.dao.mainpageDAO;
 import com.as.dto.membershipDTO;
 import com.as.dto.reservationDTO;
@@ -57,13 +59,11 @@ public class applicationServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		int result = mdao.compare(email);
 		
-		System.out.println("result : "+result);
 		
 		if(result == 0) {
-			System.out.println("true도착");
 			request.setAttribute("message", "이미 신청한 이력이 있습니다.");
-		}else if(result == 1){
-		System.out.println("else도착");	
+		}else if(result == 1){	
+		System.out.println("else");
 		String[] str = request.getParameterValues("asitem");
 		String res_date = request.getParameter("res_date");
 		String res_time = request.getParameter("res_time");
@@ -93,7 +93,8 @@ public class applicationServlet extends HttpServlet {
 		mdao.insertas(rdto);
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("mainpage/mainpage.jsp");
+		//response.sendRedirect("mainpage/mainpage.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("mainpage.do");
 		rd.forward(request, response);
 		
 	}
