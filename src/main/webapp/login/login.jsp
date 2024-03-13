@@ -12,7 +12,7 @@
 </head>
 <body>
 	<a href="https://www.samsungsvc.co.kr/" class="logo" target="_blank">
-	    <img src="images/loginLogo.PNG">
+	   <strong>SAMSUNG</strong>
 	  </a>
 	
 	  <div class="section">

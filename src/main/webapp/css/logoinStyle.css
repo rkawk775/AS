@@ -10,8 +10,11 @@ body{
   overflow-x: hidden;
 }
 a {
+  text-decoration: none;
   cursor: pointer;
   transition: all 200ms linear;
+  color : #c4c3ca;
+  font-size: large;
   margin-left:65px;
   margin-top: 5px;
 }
@@ -107,7 +110,7 @@ h6 span{
   height: 100%;
   position:absolute;    
   top: 0;
-  margin-left: 190%; 
+  margin-left: 165%; 
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: all 600ms ease-out; 
