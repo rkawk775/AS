@@ -95,17 +95,11 @@
 							<h2>개인정보 입력</h2>
 							<div class="pr con">
 								<h4>이름</h4>
-								<input type="text" name="name" value="${rdto.name}" size="20"
-									readonly
-								><br>
+								<input type="text" name="name" value="${rdto.name}" size="20" readonly><br>
 								<h4>전화번호</h4>
-								<input type="text" name="phone" value="${rdto.phone}" size="20"
-									readonly
-								><br>
+								<input type="text" name="phone" value="${rdto.phone}" size="20" readonly><br>
 								<h4>이메일</h4>
-								<input type="text" name="email" value="${rdto.email}" size="20"
-									readonly
-								><br>
+								<input type="text" name="email" value="${rdto.email}" size="20" readonly><br>
 							</div>
 						</div>
 						<br>

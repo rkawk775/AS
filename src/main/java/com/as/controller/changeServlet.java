@@ -48,7 +48,6 @@ public class changeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("연결");
 		String[] str = request.getParameterValues("asitem");
 		String res_date = request.getParameter("res_date");
 		String res_time = request.getParameter("res_time");
