@@ -12,9 +12,7 @@
 <br>
 <body>
 	<div id="back" align="center">
-		<h1 id="check">예약 확인 리스트</h1>
 		<hr width="70%">
-		<br>
 			<div id="cwitem">
 				<h2>AS품목</h2>
 				<p><input type="text" name="asitem" value="${asinfoList.asitem}"
@@ -45,7 +43,7 @@
 						value="${asinfoList.res_id}" readonly></p>						
 			</div>
 			<hr width="70%">
-			<h3>${message}</h3>
+			<h1>${message}</h1>
 			<br>
 			<br>
 		    <div id="cldelete">			

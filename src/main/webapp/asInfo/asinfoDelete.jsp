@@ -13,8 +13,6 @@
 <br>
 <body>
 	<div id="back" align="center">
-		<h1 id="check">예약삭제</h1>
-		<br>
 		<hr width="70%">
 		<form method="post" action="asinfoDelete.do">
 			<div>
