@@ -12,7 +12,7 @@
 <br>
 <body>
 	<div id="back" align="center">
-		<hr width="70%">
+	    <div id="inback" >
 			<div id="cwitem">
 				<h2>AS품목</h2>
 				<p><input type="text" name="asitem" value="${asinfoList.asitem}"
@@ -56,6 +56,7 @@
 	    <br>
 	    <br>
 	    <br>
+	    </div>
 	</div>
 </body>
 </html>

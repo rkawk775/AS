@@ -13,7 +13,7 @@
 <br>
 <body>
 	<div id="back" align="center">
-		<hr width="70%">
+		<div id="inback" >
 		<form method="post" action="asinfoDelete.do">
 			<div>
 				<div>
@@ -55,6 +55,7 @@
 			        <p><input type="submit" value="삭제"  id="button" onclick="return deletecheck()"></p>
 			</div>
 		</form>
+		</div>
 	</div>
 </body>
 </html>
