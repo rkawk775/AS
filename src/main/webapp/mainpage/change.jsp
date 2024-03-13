@@ -16,18 +16,18 @@
 <link rel="stylesheet" type="text/css" href="css/mainpage.css">
 </head>
 <body>
-
-	<%
-	    // 현재 날짜 가져오기
-	    Date currentDate = new Date();
-	
+<<<<<<< HEAD
+<div class="aside" >
+<%
+    // 현재 날짜 가져오기
+    Date currentDate = new Date();
 	    // SimpleDateFormat을 사용하여 날짜 포맷팅
 	    SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
 	    String strDate = simpleDate.format(currentDate);
 	%>
-
 	<div id="back">
 		<hr>
+
 
 		<form action="change.do" method="post" name="frm">
 			<div class="asbg op">
@@ -125,7 +125,6 @@
 		</form>
 	</div>
 	</div>
-
 
 </body>
 </html>

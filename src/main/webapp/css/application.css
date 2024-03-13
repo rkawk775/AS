@@ -8,9 +8,13 @@ h1{
 #back{
 	width: 70vw;
 	margin-left: 15vw;
+	background-color: white;
+	height: 100vh;
+}
+.aside{
+	background-image: linear-gradient(30deg, #4FF0FB 0%, #F2F2F2 90%);
 	
 }
-
 .op{
 	display:inline-block;
 	width: 70vw;
@@ -67,9 +71,6 @@ h4 {
 .btn2 input{
 	width: 100px;
 	height: 30px;
-}
-.asitem{
-
 }
 .asitem p input{
 	width: 30px;

@@ -1,6 +1,18 @@
 @charset "UTF-8";
 
 body {
+
+}
+#back{
+	margin: 0 auto;
+	width: 100vw;
+	height: 800px;
+	padding-top: 5%;
+	background-image: linear-gradient(30deg, #4FF0FB 0%, #F2F2F2 90%); 
+}
+#inback{
+	width: 70vw;
+	height: 650px;
 	background-color: white;
 }
 

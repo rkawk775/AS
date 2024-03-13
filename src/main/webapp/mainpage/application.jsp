@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="css/mainpage.css">
 </head>
 <body>
-
+<div class="aside" >
 <%
     // 현재 날짜 가져오기
     Date currentDate = new Date();
@@ -26,6 +26,7 @@
 %>
 <div id="back">
 <hr>
+
         <form action="application.do" method="post" name="frm">       
             <div class="asbg op">
                <h2>AS 품목</h2>
@@ -100,6 +101,7 @@
 <input type="reset" value="취소">
 </div>
 </form>
+</div>
 </div>
 
 
