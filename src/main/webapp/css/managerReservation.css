@@ -9,7 +9,7 @@
 }
 
 #inside {
-	background-color: #1f2029;
+	background-color: white;
 }
 
 .button {
@@ -17,7 +17,77 @@
 	
 }
 
-/* 기존 스타일들 */
+.con{
+	display: inline-block;
+	margin-left: 15%;
+}
+
+.op{
+	display:inline-block;
+	width: 70vw;
+	height: 8vh;
+    color: black;
+}
+
+.asitem{
+}
+.asitem p input{
+	width: 30px;
+	height: 30px;
+}
+.op2{
+	margin-right: 10%;
+	margin-left: 30px;
+}
+
+.asitem,
+.date,
+.time{
+	width: 40vw;
+	color: black;
+}
+
+.hidden{
+	display: none;
+}
+
+.date input{
+	margin-left: 5%;
+}
+
+.time input{
+	margin-left: 3%;
+}
+
+.prflex {
+	display: flex;
+}
+.prbg {
+	height: 250px;
+}
+
+.pr{
+	margin-left: 25%;
+}
+.pr input{
+	width: 75%;
+	height: 15%;;
+	font-size: 30px;
+}
+.prbg h2 {
+	margin-left: 4%;
+	align-self: center;
+}
+
+.btn{
+	display: inline-block;
+	margin: auto;
+}
+.btn2 input{
+	width: 100px;
+	height: 30px;
+}
+
 body {
 	background-color: #2a2b38;
 	margin: 0;
@@ -39,6 +109,23 @@ img {
 h1 {
     color: rgb(192, 192, 192);
 	margin: 0;
+	text-align: center;
+}
+
+h2{
+	display: inline-block;
+	width: 20%;
+	text-align:center;
+	align-items: center;
+}
+
+h4 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+p{
+	display: inline-block;
 	text-align: center;
 }
 

@@ -32,11 +32,11 @@
 	                      <h4 class="mb-4 pb-3">Log In</h4>
 	                      <div class="form-group">
 	                        <input type="text" name="email" class="form-style" placeholder="이메일 입력하세요."  value="${email}">
-	                        <i class="input-icon uil uil-at"></i>
+	                        <i class="input-icon fa-solid fa-envelope"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
 	                        <input type="password" name="pw" class="form-style" placeholder="비밀번호 입력하세요" autocomplete="off">
-	                        <i class="input-icon uil uil-lock-alt"></i>
+	                        <i class="input-icon fa-solid fa-lock"></i>
 	                      </div>
 	                      <div class="radio-set">
 	                      		<input type="radio" name="admin" value="1">관리자 &nbsp; &nbsp;&nbsp; &nbsp;
@@ -57,23 +57,23 @@
 	                      <h4 class="mb-4 pb-3">Sign Up</h4>
 	                      <div class="form-group">
 	                        <input type="text" name="email" class="form-style" placeholder="이메일" autocomplete="off">
-	                        <i class="input-icon uil uil-user"></i>
+	                        <i class="input-icon fa-solid fa-envelope"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
 	                        <input type="password" name="pw" class="form-style" placeholder="비밀번호" autocomplete="off">
-	                        <i class="input-icon uil uil-at"></i>
+	                         <i class="input-icon fa-solid fa-lock"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
 	                        <input type="password" name="pw_check" class="form-style" placeholder="비밀번호 중복 확인" autocomplete="off">
-	                        <i class="input-icon uil uil-lock-alt"></i>
+	                        <i class="input-icon fa-solid fa-key"></i>
 	                      </div>
 	                      <div class="form-group mt-2">
 	                        <input type="text" name="name" class="form-style" placeholder="이름" autocomplete="off">
-	                        <i class="input-icon uil uil-lock-alt"></i>
+	                        <i class="input-icon fa-solid fa-user"></i>
 	                      </div>
 	                      <div class="form-group mt-2">
 	                        <input type="text" name="phone" class="form-style" placeholder="전화번호"  autocomplete="off">
-	                        <i class="input-icon uil uil-lock-alt"></i>
+	                        <i class="input-icon fa-solid fa-phone"></i>
 	                      </div>
 	                      <input type="submit" value="회원가입" class="btn2 mt-4" onclick="return joinCheck()">
 	                      <input type="reset" class="btn2 mt-4" value="취소">
@@ -89,5 +89,6 @@
 	          </div>
 	      </div>
 	  </div>
+
 </body>
 </html>
