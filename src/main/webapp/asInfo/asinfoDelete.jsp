@@ -54,8 +54,7 @@
 			<h3>삭제하면 복구할수 없습니다. 신중히 선택해주세요.</h3>
 			<br>
 			<div id="cldelete">
-			        <p><input type="submit" value="삭제"  id="button" onclick="return deletecheck()">
-			            <input type="button" value="목록" onclick="location.href='asinfoList.do'" id="button"></p>
+			        <p><input type="submit" value="삭제"  id="button" onclick="return deletecheck()"></p>
 			</div>
 		</form>
 	</div>

@@ -51,6 +51,7 @@
 		    <div id="cldelete">			
 			    <div id="asinfoList" align="center">
 				    <input type="button" value="예약삭제" onclick="location.href='asinfoDelete.do?res_id=${asinfoList.res_id}' " id="button">
+				    <input type="button" value="목록" onclick="location.href='asinfoList.do'" id="button">
 			    </div>	
 	    </div>
 	    <br>
