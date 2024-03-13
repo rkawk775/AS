@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<div class="logout" align="right">
-			<a href="" id="logout">로그아웃</a>
+			<a href="logout.do" id="logout">로그아웃</a>
 		</div>
 	</header>
 </body>

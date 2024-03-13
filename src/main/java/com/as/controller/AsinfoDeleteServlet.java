@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.as.dao.AsinfoDAO;
+import com.as.dao.mainpageDAO;
+import com.as.dto.membershipDTO;
 import com.as.dto.reservationDTO;
 
 /**
@@ -46,8 +48,11 @@ public class AsinfoDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String res_id = request.getParameter("res_id");
+		String email = request.getParameter("email");
+		mainpageDAO mdao = mainpageDAO.getInstance();
+		membershipDTO mdto = mdao.selectByCode(email);
+		request.setAttribute("mdto", mdto);
 		AsinfoDAO dao = AsinfoDAO.getInstance();
 		dao.deleteAsinfo(res_id);
 		response.sendRedirect("mainpage.do");

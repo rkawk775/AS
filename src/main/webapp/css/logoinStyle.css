@@ -80,7 +80,7 @@ h6 span{
   color: #ffeba7;
   background-color: #102770;
   content: '\f245';
-  /*background-image:url(images/pointer.png);*/
+  /*background-image:url("images/pointer.png"); */
   font-family: 'unicons';
   z-index: 20;
   top: -10px;
@@ -103,14 +103,14 @@ h6 span{
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 800px;
-  margin-top: 60px;
+  margin: 60px auto 0;
 }
 .card-3d-wrapper {
   width: 100%;
   height: 100%;
   position:absolute;    
   top: 0;
-  margin-left: 165%; 
+  margin: 0 auto;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: all 600ms ease-out; 
@@ -184,7 +184,7 @@ h6 span{
 }
 .input-icon {
   position: absolute;
-  top: 0;
+  top: 25px;
   left: 18px;
   height: 48px;
   font-size: 24px;
