@@ -37,8 +37,12 @@ public class AsinfoListServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		reservationDTO asinfoList = adao.selectUserAsinfo(email);
 		String res_id = request.getParameter("res_id");
-		if(res_id == null) {
+		if(res_id == "") {
+			System.out.println(res_id);
 			request.setAttribute("message", "등록된 예약이 없습니다.");
+		}
+		else {
+			request.setAttribute("message", "");
 		}
 		request.setAttribute("asinfoList", asinfoList);
 		
