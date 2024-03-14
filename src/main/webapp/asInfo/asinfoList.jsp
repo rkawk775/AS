@@ -12,8 +12,8 @@
 <br>
 <body>
 	<div id="back" align="center">
-	    <div id="inback" >
 	    <h1>${message}</h1>
+	    <div id="inback" >
 			<div id="cwitem">
 				<h2>AS품목</h2>
 				<p><input type="text" name="asitem" value="${asinfoList.asitem}"
