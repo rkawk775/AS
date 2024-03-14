@@ -12,6 +12,7 @@
 <br>
 <body>
 	<div id="back" align="center">
+	    <h1>${message}</h1>
 	    <div id="inback" >
 			<div id="cwitem">
 				<h2>AS품목</h2>
@@ -42,14 +43,13 @@
 				<p><input type="text" name="res_id"
 						value="${asinfoList.res_id}" readonly></p>						
 			</div>
-			<hr width="70%">
-			<h1>${message}</h1>
+			<hr width="70%">	
 			<br>
 			<br>
 		    <div id="cldelete">			
 			    <div id="asinfoList" align="center">
 				    <input type="button" value="예약삭제" onclick="location.href='asinfoDelete.do?res_id=${asinfoList.res_id}' " id="button">
-				    <input type="button" value="목록" onclick="location.href='asinfoList.do'" id="button">
+				    <input type="button" value="목록" onclick="location.href='mainpage.do?email=${asinfoList.email}'" id="button">
 			    </div>	
 	    </div>
 	    <br>

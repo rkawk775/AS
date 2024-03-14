@@ -53,6 +53,7 @@
 			<br>
 			<div id="cldelete">
 			        <p><input type="submit" value="삭제"  id="button" onclick="return deletecheck()"></p>
+			        <p><input type="button" value="취소" onclick="location.href='asinfoList.do?res_id=${asinfoDelete.res_id}'" id="button"></p>
 			</div>
 		</form>
 		</div>
