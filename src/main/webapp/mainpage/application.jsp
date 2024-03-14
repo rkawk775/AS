@@ -99,6 +99,7 @@
 <div class="btn2">
 <input type="submit" value="예약하기" onclick="return asCheck()">
 <input type="reset" value="취소">
+<input type="button" value="돌아가기" onclick="location.href='mainpage.do?email=${mdto.email}'">
 </div>
 </form>
 </div>

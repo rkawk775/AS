@@ -120,6 +120,7 @@
 			<div class="btn2">
 				<input type="submit" value="변경하기" onclick="return asCheck()">
 				<input type="reset" value="취소">
+				<input type="button" value="돌아가기" onclick="location.href='mainpage.do?email=${rdto.email}'">
 			</div>
 		</form>
 	</div>
