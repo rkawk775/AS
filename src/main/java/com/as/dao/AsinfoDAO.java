@@ -85,7 +85,8 @@ public class AsinfoDAO {
 				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));
 				rdto.setName(rs.getString("name"));
-				rdto.setRes_id(rs.getInt("res_id"));			
+				rdto.setRes_id(rs.getInt("res_id"));		
+				rdto.setEmail(rs.getString("email"));
 			}
 
 		} catch (Exception e) {
