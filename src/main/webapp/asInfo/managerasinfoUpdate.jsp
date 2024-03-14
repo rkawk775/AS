@@ -47,7 +47,7 @@
 					<hr>
 					<div class="datebg op">
 						<h2>날짜 선택</h2>
-						<div class="date con">
+						<div class="date con"  style="width: 41vw;">
 							<div class="hidden"></div>
 							<%
 		                        // 1부터 5까지 반복하면서 날짜 1일씩 증가시키기
