@@ -63,7 +63,7 @@ public class applicationServlet extends HttpServlet {
 		if(result == 0) {
 			request.setAttribute("message", "이미 신청한 이력이 있습니다.");
 		}else if(result == 1){	
-		System.out.println("else");
+		//System.out.println("else");
 		String[] str = request.getParameterValues("asitem");
 		String res_date = request.getParameter("res_date");
 		String res_time = request.getParameter("res_time");

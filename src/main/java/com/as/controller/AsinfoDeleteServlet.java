@@ -52,10 +52,13 @@ public class AsinfoDeleteServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		mainpageDAO mdao = mainpageDAO.getInstance();
 		membershipDTO mdto = mdao.selectByCode(email);
-		request.setAttribute("mdto", mdto);
+		System.out.println(email);
+		request.setAttribute("email", mdto);
 		AsinfoDAO dao = AsinfoDAO.getInstance();
 		dao.deleteAsinfo(res_id);
-		response.sendRedirect("mainpage.do");
+		RequestDispatcher rd = request.getRequestDispatcher("mainpage.do");
+		rd.forward(request, response);
+		//response.sendRedirect("mainpage.do");
 	}
 
 }

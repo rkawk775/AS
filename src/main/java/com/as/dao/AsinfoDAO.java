@@ -33,15 +33,15 @@ public class AsinfoDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			System.out.println("dd");
+			//System.out.println("dd");
 			pstmt.setString(1, email);
-			System.out.println("aa");
+			//System.out.println("aa");
 			rs = pstmt.executeQuery();
-			System.out.println("aa");
+			//System.out.println("aa");
 			if(rs.next()) {
-				System.out.println("aa");
+				//System.out.println("aa");
 				rdto = new reservationDTO();
-				System.out.println("aa");
+				//System.out.println("aa");
 				rdto.setAsitem(rs.getString("asitem"));
 				rdto.setRes_date(rs.getString("res_date"));
 				rdto.setRes_time(rs.getString("res_time"));

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.as.dao.AsinfoDAO;
+import com.as.dao.mainpageDAO;
 import com.as.dto.reservationDTO;
 
 /**
@@ -33,13 +34,20 @@ public class AsinfoListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		AsinfoDAO adao = AsinfoDAO.getInstance();
-		
+		mainpageDAO mdao = mainpageDAO.getInstance();
 		String email = request.getParameter("email");
-		reservationDTO asinfoList = adao.selectUserAsinfo(email);
-		String res_id = request.getParameter("res_id");
-		if(res_id == null) {
-			request.setAttribute("message", "등록된 예약이 없습니다.");
+		int result = mdao.compare(email);
+		System.out.println(result);
+		
+		if(result == 1 ) {
+			request.setAttribute("message", "예약 신청이 없습니다.");
+			RequestDispatcher rd = request.getRequestDispatcher("mainpage.do");
+			rd.forward(request, response);
 		}
+		reservationDTO asinfoList = adao.selectUserAsinfo(email);
+		
+		
+		
 		request.setAttribute("asinfoList", asinfoList);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoList.jsp");
