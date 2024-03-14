@@ -16,7 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/mainpage.css">
 </head>
 <body>
-<<<<<<< HEAD
 <div class="aside" >
 <%
     // 현재 날짜 가져오기
