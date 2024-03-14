@@ -13,6 +13,7 @@
 <body>
 	<div id="back" align="center">
 	    <div id="inback" >
+	    <h1>${message}</h1>
 			<div id="cwitem">
 				<h2>AS품목</h2>
 				<p><input type="text" name="asitem" value="${asinfoList.asitem}"
@@ -42,8 +43,7 @@
 				<p><input type="text" name="res_id"
 						value="${asinfoList.res_id}" readonly></p>						
 			</div>
-			<hr width="70%">
-			<h1>${message}</h1>
+			<hr width="70%">	
 			<br>
 			<br>
 		    <div id="cldelete">			
