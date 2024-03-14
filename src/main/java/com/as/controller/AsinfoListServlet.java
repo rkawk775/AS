@@ -32,13 +32,10 @@ public class AsinfoListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		AsinfoDAO adao = AsinfoDAO.getInstance();
 		mainpageDAO mdao = mainpageDAO.getInstance();
 		String email = request.getParameter("email");
 		int result = mdao.compare(email);
-		System.out.println(result);
-		
 		if(result == 1 ) {
 			request.setAttribute("message", "예약 신청이 없습니다.");
 			RequestDispatcher rd = request.getRequestDispatcher("mainpage.do");
@@ -46,10 +43,9 @@ public class AsinfoListServlet extends HttpServlet {
 		}
 		reservationDTO asinfoList = adao.selectUserAsinfo(email);
 		
-		
+		System.out.println(email);
 		
 		request.setAttribute("asinfoList", asinfoList);
-		
 		RequestDispatcher rd = request.getRequestDispatcher("asInfo/asinfoList.jsp");
 		rd.forward(request, response);
 	

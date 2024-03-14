@@ -55,6 +55,8 @@
 			        <p><input type="submit" value="삭제"  id="button" onclick="return deletecheck()"></p>
 			        <p><input type="button" value="취소" onclick="location.href='asinfoList.do?email=${asinfoDelete.email}'" id="button"></p>
 			</div>
+			
+			<input type="hidden" name="email" value="${asinfoDelete.email}">
 		</form>
 		</div>
 	</div>

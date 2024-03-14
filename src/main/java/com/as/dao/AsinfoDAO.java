@@ -48,7 +48,7 @@ public class AsinfoDAO {
 				rdto.setEmail(rs.getString("email"));
 				rdto.setName(rs.getString("name"));
 				rdto.setRes_id(rs.getInt("res_id"));
-				System.out.println(rdto.getRes_id());
+				//System.out.println(rdto.getRes_id());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

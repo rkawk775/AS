@@ -50,9 +50,10 @@ public class AsinfoDeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String res_id = request.getParameter("res_id");
 		String email = request.getParameter("email");
+		System.out.println(email);
 		mainpageDAO mdao = mainpageDAO.getInstance();
 		membershipDTO mdto = mdao.selectByCode(email);
-		System.out.println(email);
+		System.out.println("email : "+email);
 		request.setAttribute("email", mdto);
 		AsinfoDAO dao = AsinfoDAO.getInstance();
 		dao.deleteAsinfo(res_id);
