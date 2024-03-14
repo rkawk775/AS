@@ -61,6 +61,6 @@ public class managerasinfoUpdateServlet extends HttpServlet {
         mdao.updateAsinfo(rdto);
         
         // 업데이트 후에는 다시 예약 목록 페이지로 이동
-        response.sendRedirect("reservationList.do"); 
+        response.sendRedirect("reservationList.do");
     }
 }

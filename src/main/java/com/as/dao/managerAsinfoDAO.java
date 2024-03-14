@@ -108,7 +108,6 @@ public class managerAsinfoDAO {
                 rdto.setName(rs.getString("name"));
                 rdto.setRes_id(rs.getInt("res_id"));
                 rdto.setPhone(rs.getString("phone"));
-                rdto.setEmail(rs.getString("email"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,7 +119,7 @@ public class managerAsinfoDAO {
     }
 
     public void updateAsinfo(reservationDTO rdto) {
-    	String sql = "UPDATE reservation r JOIN membership m ON r.email = m.email SET r.res_date = ?, r.res_time = ? WHERE r.res_id = ?";
+        String sql = "UPDATE reservation SET res_date=?, res_time=? WHERE res_id=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
 
