@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인/회원가입</title>
 <link rel="stylesheet" type="text/css" href="css/logoinStyle.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" >
 <script type="text/javascript" src="script/login.js"></script>
@@ -56,7 +56,7 @@
 	                    <div class="section text-center">
 	                      <h4 class="mb-4 pb-3">Sign Up</h4>
 	                      <div class="form-group">
-	                        <input type="text" name="email" class="form-style" placeholder="이메일" autocomplete="off">
+	                        <input type="text" name="email" class="form-style" placeholder="이메일" autocomplete="off" pattern="[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}">
 	                        <i class="input-icon fa-solid fa-envelope"></i>
 	                      </div>  
 	                      <div class="form-group mt-2">
